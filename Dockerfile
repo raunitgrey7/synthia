@@ -1,0 +1,20 @@
+# Multi-stage build: resolve and install dependencies with uv, then copy the environment into a slim runtime
+# image that runs as a non-root user. CPU-only torch wheels come from the index declared in pyproject.toml.
+FROM ghcr.io/astral-sh/uv:python3.13-bookworm-slim AS builder
+ENV UV_COMPILE_BYTECODE=1 UV_LINK_MODE=copy UV_PYTHON_DOWNLOADS=0
+WORKDIR /app
+COPY pyproject.toml uv.lock README.md ./
+COPY src ./src
+RUN uv sync --frozen --no-dev --no-editable
+
+FROM python:3.13-slim-bookworm AS runtime
+ENV PATH="/app/.venv/bin:$PATH" PYTHONUNBUFFERED=1 OMP_NUM_THREADS=2 APP_PORT=8000
+RUN groupadd --system synthia && useradd --system --gid synthia --home /app --shell /usr/sbin/nologin synthia \
+    && apt-get update && apt-get install -y --no-install-recommends curl && rm -rf /var/lib/apt/lists/*
+WORKDIR /app
+COPY --from=builder --chown=synthia:synthia /app/.venv /app/.venv
+RUN mkdir -p /app/data /app/reports && chown -R synthia:synthia /app
+USER synthia
+EXPOSE 8000
+HEALTHCHECK --interval=30s --timeout=5s --start-period=20s --retries=3 CMD curl -fsS http://localhost:8000/health || exit 1
+CMD ["uvicorn", "synthia.api.app:app", "--host", "0.0.0.0", "--port", "8000"]
