@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ title }}</title>
+<style>
+:root {
+  color-scheme: light;
+  --surface-1: #fcfcfb; --page: #f9f9f7; --text-primary: #0b0b0b; --text-secondary: #52514e; --muted: #898781;
+  --grid: #e1e0d9; --axis: #c3c2b7; --border: rgba(11,11,11,0.10);
+  --series-1: #2a78d6; --series-2: #eb6834; --good: #006300; --critical: #d03b3b;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --surface-1: #1a1a19; --page: #0d0d0d; --text-primary: #f0efec; --text-secondary: #c3c2b7; --muted: #898781;
+    --grid: #2c2c2a; --axis: #383835; --border: rgba(255,255,255,0.10);
+    --series-1: #3987e5; --series-2: #d95926; --good: #0ca30c; --critical: #e66767;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --surface-1: #1a1a19; --page: #0d0d0d; --text-primary: #f0efec; --text-secondary: #c3c2b7; --muted: #898781;
+  --grid: #2c2c2a; --axis: #383835; --border: rgba(255,255,255,0.10);
+  --series-1: #3987e5; --series-2: #d95926; --good: #0ca30c; --critical: #e66767;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--text-primary); font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+main { max-width: 1120px; margin: 0 auto; padding: 24px 16px 48px; }
+h1 { font-size: 26px; margin: 0 0 4px; font-weight: 650; }
+h2 { font-size: 18px; margin: 32px 0 8px; font-weight: 600; }
+h3 { font-size: 15px; margin: 16px 0 6px; font-weight: 600; color: var(--text-secondary); }
+p { margin: 6px 0; color: var(--text-secondary); }
+.subtitle { color: var(--text-secondary); }
+.card { background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px; padding: 16px; margin-top: 12px; }
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-top: 12px; }
+.tile { background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; }
+.tile .label { font-size: 13px; color: var(--text-secondary); }
+.tile .value { font-size: 28px; font-weight: 600; line-height: 1.2; }
+.tile .ci { font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.tile .hint { font-size: 12px; color: var(--muted); }
+table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums; }
+th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--grid); font-size: 14px; }
+th { color: var(--text-secondary); font-weight: 600; }
+td.num, th.num { text-align: right; }
+table.matrix th, table.matrix td { font-size: 12px; padding: 3px 5px; }
+svg.chart { width: 100%; height: auto; display: block; overflow: visible; }
+svg .grid { stroke: var(--grid); stroke-width: 1; }
+svg .axis { stroke: var(--axis); stroke-width: 1; }
+svg .whisker { stroke: var(--text-secondary); stroke-width: 1.5; }
+svg .series-1 { fill: var(--series-1); }
+svg .series-2 { fill: var(--series-2); }
+svg text { font: 12px system-ui, -apple-system, "Segoe UI", sans-serif; fill: var(--text-secondary); }
+svg .tick { font-size: 11px; fill: var(--muted); }
+svg .value { fill: var(--text-primary); font-variant-numeric: tabular-nums; }
+.legend { display: flex; gap: 16px; font-size: 13px; color: var(--text-secondary); margin: 4px 0 8px; }
+.legend span::before { content: ""; display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; vertical-align: -1px; }
+.legend .real::before { background: var(--series-1); }
+.legend .synthetic::before { background: var(--series-2); }
+.multiples { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; }
+.multiples .card { margin-top: 0; padding: 10px 12px; }
+.multiples h3 { margin: 0 0 4px; font-size: 14px; }
+.heatmaps { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 12px; }
+details { margin-top: 8px; }
+summary { cursor: pointer; color: var(--text-secondary); font-size: 13px; }
+code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; }
+pre { background: var(--surface-1); border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; overflow-x: auto; color: var(--text-primary); }
+.ok { color: var(--good); } .bad { color: var(--critical); }
+footer { margin-top: 32px; color: var(--muted); font-size: 13px; }
+</style>
+</head>
+<body>
+<main>
+<h1>{{ title }}</h1>
+<p class="subtitle">{{ subtitle }}</p>
+
+<div class="tiles">
+{% for tile in tiles %}
+  <div class="tile">
+    <div class="label">{{ tile.label }}</div>
+    <div class="value">{{ tile.value }}</div>
+    <div class="ci">{{ tile.ci }}</div>
+    <div class="hint">{{ tile.hint }}</div>
+  </div>
+{% endfor %}
+</div>
+
+<h2>Setup</h2>
+<div class="card">
+<table>
+<tbody>
+{% for key, value in setup %}
+<tr><th>{{ key }}</th><td>{{ value }}</td></tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+
+{% if privacy_report %}
+<h2>Differential privacy accounting</h2>
+<div class="card">
+<p>Target epsilon {{ "%.3f"|format(privacy_report.epsilon_target) }}, spent epsilon <strong>{{ "%.4f"|format(privacy_report.epsilon_spent) }}</strong> at delta {{ privacy_report.delta }} (RDP order {{ privacy_report.rdp_order }}, noise multiplier {{ "%.3f"|format(privacy_report.noise_multiplier) }}). Adjacency: {{ privacy_report.adjacency }}.</p>
+<table>
+<thead><tr><th>Mechanism</th><th class="num">Noise multiplier</th><th class="num">Count or steps</th><th class="num">Sampling rate</th></tr></thead>
+<tbody>
+{% for q in privacy_report.queries %}
+<tr><td>{{ q.mechanism }}</td><td class="num">{{ "%.3f"|format(q.noise_multiplier) }}</td><td class="num">{{ q.count if q.count is defined else q.steps }}</td><td class="num">{{ "%.4f"|format(q.sampling_rate) if q.sampling_rate is defined else "1 (full data)" }}</td></tr>
+{% endfor %}
+</tbody>
+</table>
+{% if privacy_report.caveats %}
+<h3>Caveats</h3>
+<ul>{% for c in privacy_report.caveats %}<li>{{ c }}</li>{% endfor %}</ul>
+{% endif %}
+</div>
+{% endif %}
+
+<h2>Fidelity: per-column distance</h2>
+<p>Kolmogorov-Smirnov distance for numeric columns, total variation distance for categorical columns. Zero means identical marginals; whiskers are {{ level_pct }}% bootstrap intervals.</p>
+<div class="card">
+{{ column_chart|safe }}
+<details><summary>Table view</summary>
+<table><thead><tr><th>Column</th><th>Metric</th><th class="num">Distance</th><th class="num">CI low</th><th class="num">CI high</th></tr></thead>
+<tbody>{% for r in column_rows %}<tr><td>{{ r.name }}</td><td>{{ r.metric }}</td><td class="num">{{ "%.4f"|format(r.value) }}</td><td class="num">{{ "%.4f"|format(r.low) }}</td><td class="num">{{ "%.4f"|format(r.high) }}</td></tr>{% endfor %}</tbody></table>
+</details>
+</div>
+
+<h2>Fidelity: marginal distributions</h2>
+<div class="legend"><span class="real">real (train)</span><span class="synthetic">synthetic</span></div>
+<div class="multiples">
+{% for m in marginals %}
+<div class="card">
+<h3>{{ m.name }}</h3>
+{{ m.svg|safe }}
+<details><summary>Table view</summary>
+<table><thead><tr><th>Bin</th><th class="num">Real</th><th class="num">Synthetic</th></tr></thead>
+<tbody>{% for b, r, s in m.rows %}<tr><td>{{ b }}</td><td class="num">{{ "%.3f"|format(r) }}</td><td class="num">{{ "%.3f"|format(s) }}</td></tr>{% endfor %}</tbody></table>
+</details>
+</div>
+{% endfor %}
+</div>
+
+<h2>Fidelity: pairwise associations</h2>
+<p>Pearson correlation for numeric pairs, Cramer's V for categorical pairs, correlation ratio for mixed pairs. The third panel is the absolute difference; mean {{ "%.4f"|format(corr_delta.value) }} [{{ "%.4f"|format(corr_delta.low) }}, {{ "%.4f"|format(corr_delta.high) }}], max {{ "%.4f"|format(corr_delta_max.value) }}.</p>
+<div class="heatmaps">
+<div class="card"><h3>Real</h3>{{ heat_real|safe }}<details><summary>Table view</summary>{{ table_real|safe }}</details></div>
+<div class="card"><h3>Synthetic</h3>{{ heat_syn|safe }}<details><summary>Table view</summary>{{ table_syn|safe }}</details></div>
+<div class="card"><h3>Absolute difference</h3>{{ heat_delta|safe }}<details><summary>Table view</summary>{{ table_delta|safe }}</details></div>
+</div>
+
+<h2>Utility: train on synthetic, test on real</h2>
+<p>Target <code>{{ utility.target }}</code> (positive class <code>{{ utility.positive }}</code>). ROC AUC on the real holdout of {{ n_holdout }} rows; intervals from a paired bootstrap over holdout rows.</p>
+<div class="card">
+<table>
+<thead><tr><th>Model</th><th class="num">Train on real</th><th class="num">Train on synthetic</th><th class="num">Ratio</th><th>Note</th></tr></thead>
+<tbody>
+{% for m in utility.models %}
+<tr><td>{{ m.model }}</td><td class="num">{{ fmt_est(m.trtr_auc) }}</td><td class="num">{{ fmt_est(m.tstr_auc) }}</td><td class="num">{{ fmt_est(m.ratio) }}</td><td>{{ "synthetic target had one class" if m.degenerate else "" }}</td></tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+
+<h2>Privacy</h2>
+<div class="card">
+<table>
+<thead><tr><th>Metric</th><th class="num">Value</th><th class="num">Interval</th><th>Reference</th><th>Reading</th></tr></thead>
+<tbody>
+{% for r in privacy_rows %}
+<tr><td>{{ r.name }}</td><td class="num">{{ "%.4f"|format(r.value) }}</td><td class="num">[{{ "%.4f"|format(r.low) }}, {{ "%.4f"|format(r.high) }}]</td><td>{{ r.reference }}</td><td>{{ r.reading }}</td></tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+
+<footer>
+<p>Generated {{ generated_at }} by synthia {{ version }}. Seeds: {{ seeds }}. Bootstrap replicates: {{ n_boot }}.</p>
+{% if command %}<pre>{{ command }}</pre>{% endif %}
+</footer>
+</main>
+</body>
+</html>
