@@ -114,7 +114,7 @@ def cmd_report(args: argparse.Namespace) -> int:
 def cmd_bench(args: argparse.Namespace) -> int:
     from synthia.bench import run_benchmark  # noqa: PLC0415  (torch import is slow; only load for bench)
 
-    return run_benchmark(quick=args.quick, check=args.check, out=args.out, seed=args.seed)
+    return run_benchmark(quick=args.quick, check=args.check, out=args.out, seed=args.seed, readme=args.readme)
 
 
 def cmd_serve(args: argparse.Namespace) -> int:
@@ -174,6 +174,7 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--check", action="store_true", help="exit non-zero when a quality gate fails")
     p.add_argument("--out", default="benchmarks/results.json")
     p.add_argument("--seed", type=int, default=0)
+    p.add_argument("--readme", default=None, help="refresh the results table between the README markers")
     p.set_defaults(func=cmd_bench)
 
     p = sub.add_parser("serve", help="run the HTTP API")

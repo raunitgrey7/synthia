@@ -71,6 +71,6 @@ max-args = 10
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-addopts = "-q -p no:cacheprovider"
+addopts = "-p no:cacheprovider"
 timeout = 600
 filterwarnings = ["error::RuntimeWarning:synthia", "ignore::DeprecationWarning"]

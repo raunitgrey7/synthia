@@ -259,7 +259,45 @@ def _markdown_row(c: dict[str, Any]) -> str:
     return "| " + " | ".join(cells) + " |"
 
 
-def run_benchmark(quick: bool = False, check: bool = False, out: str = "benchmarks/results.json", seed: int = 0) -> int:
+README_START = "<!-- benchmark-table:start -->"
+README_END = "<!-- benchmark-table:end -->"
+
+
+def results_table(results: dict[str, Any]) -> str:
+    """The Markdown table alone, for embedding in the README."""
+    text = render_markdown(results)
+    lines = text.splitlines()
+    first = next(i for i, line in enumerate(lines) if line.startswith("| Generator"))
+    last = first
+    while last + 1 < len(lines) and lines[last + 1].startswith("|"):
+        last += 1
+    return "\n".join(lines[first : last + 1])
+
+
+def update_readme(results: dict[str, Any], readme: Path) -> None:
+    """Replace the table between the README markers with the one rendered from ``results``."""
+    text = readme.read_text(encoding="utf-8")
+    start, end = text.find(README_START), text.find(README_END)
+    if start < 0 or end < 0 or end < start:
+        raise ValueError(f"{readme} lacks the benchmark table markers")
+    meta = results["meta"]
+    note = (
+        f"Measured {meta['generated_at']} by `{meta['command']}` on {meta['platform']} with torch "
+        f"{meta['torch_version']} ({meta['torch_threads']} threads); {meta['n_train']} training rows, "
+        f"{meta['n_holdout']} holdout rows, {meta['n_boot']} bootstrap replicates, seed {meta['seed']}. "
+        f"Brackets are 95 percent bootstrap intervals."
+    )
+    body = f"{README_START}\n{note}\n\n{results_table(results)}\n{README_END}"
+    readme.write_text(text[:start] + body + text[end + len(README_END) :], encoding="utf-8")
+
+
+def run_benchmark(
+    quick: bool = False,
+    check: bool = False,
+    out: str = "benchmarks/results.json",
+    seed: int = 0,
+    readme: str | None = None,
+) -> int:
     profile_name = "quick" if quick else "full"
     profile = PROFILES[profile_name]
     torch.set_num_threads(TORCH_THREADS)
@@ -299,7 +337,7 @@ def run_benchmark(quick: bool = False, check: bool = False, out: str = "benchmar
             "n_synthetic": len(train),
             "n_boot": profile["n_boot"],
             "target": TARGET,
-            "command": " ".join(sys.argv),
+            "command": "python -m synthia.bench " + " ".join(sys.argv[1:]),
             "total_seconds": round(time.perf_counter() - started, 1),
         },
         "configs": configs,
@@ -310,6 +348,8 @@ def run_benchmark(quick: bool = False, check: bool = False, out: str = "benchmar
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_text(json.dumps(results, indent=2))
     out_path.with_suffix(".md").write_text(render_markdown(results))
+    if readme is not None:
+        update_readme(results, Path(readme))
     print(
         f"[bench] wrote {out_path} and {out_path.with_suffix('.md')} in "
         f"{results['meta']['total_seconds']:.0f}s; gates passed: {results['gate_passed']}"
@@ -328,8 +368,9 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--check", action="store_true")
     parser.add_argument("--out", default="benchmarks/results.json")
     parser.add_argument("--seed", type=int, default=0)
+    parser.add_argument("--readme", default=None, help="also refresh the results table between the README markers")
     args = parser.parse_args(argv)
-    return run_benchmark(quick=args.quick, check=args.check, out=args.out, seed=args.seed)
+    return run_benchmark(quick=args.quick, check=args.check, out=args.out, seed=args.seed, readme=args.readme)
 
 
 if __name__ == "__main__":

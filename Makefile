@@ -19,7 +19,7 @@ test:
 	$(UV) run pytest -q
 
 bench:
-	$(UV) run python -m $(PKG).bench --check
+	$(UV) run python -m $(PKG).bench --check --readme README.md
 
 report:
 	$(UV) run $(PKG) report --out reports/patients_copula.html

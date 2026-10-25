@@ -1,11 +1,20 @@
 import json
 import logging
+import pathlib
 
 import numpy as np
 import pytest
 
 from synthia.api.metrics import MetricsRegistry
-from synthia.bench import PROFILES, BenchConfig, apply_gates, build_matrix, render_markdown
+from synthia.bench import (
+    PROFILES,
+    BenchConfig,
+    apply_gates,
+    build_matrix,
+    render_markdown,
+    results_table,
+    update_readme,
+)
 from synthia.cli import build_parser, main
 from synthia.logging import JsonFormatter, request_id_var
 
@@ -165,3 +174,75 @@ def test_metrics_registry_renders_all_types():
     assert np.isclose(
         float(text.split('synthia_http_request_duration_seconds_sum{path="/p"} ')[1].split("\n")[0]), 0.02
     )
+
+
+def _fake_results():
+    est = {"value": 0.1, "ci_low": 0.05, "ci_high": 0.15}
+    return {
+        "meta": {
+            "profile": "quick",
+            "generated_at": "now",
+            "synthia_version": "x",
+            "platform": "p",
+            "cpu_count": 1,
+            "torch_version": "t",
+            "torch_threads": 1,
+            "n_rows": 10,
+            "n_train": 8,
+            "n_holdout": 2,
+            "n_synthetic": 8,
+            "n_boot": 1,
+            "seed": 0,
+            "total_seconds": 1.0,
+            "command": "cmd",
+        },
+        "configs": [
+            {
+                "name": "copula",
+                "privacy_report": None,
+                "fit_seconds": 0.1,
+                "passed": True,
+                "headline": {"utility_ratio": 0.9, "exact_match_rate": 0.0},
+                "metrics": {
+                    "fidelity": {"mean_ks": est, "mean_tvd": est, "correlation_delta_mean": est},
+                    "privacy": {"membership_auc": est, "nndr_synthetic": est},
+                },
+            }
+        ],
+        "determinism": {"copula": True},
+        "gate_passed": True,
+    }
+
+
+def test_readme_table_is_replaced_between_markers(tmp_path):
+    readme = tmp_path / "README.md"
+    readme.write_text("# Title\n\n<!-- benchmark-table:start -->\nOLD-TABLE\n<!-- benchmark-table:end -->\n\ntail\n")
+    update_readme(_fake_results(), readme)
+    text = readme.read_text()
+    assert "OLD-TABLE" not in text and "tail" in text
+    assert results_table(_fake_results()) in text
+    assert text.count("<!-- benchmark-table:start -->") == 1
+    with pytest.raises(ValueError, match="markers"):
+        update_readme(_fake_results(), _write(tmp_path, "no markers"))
+
+
+def _write(folder, text):
+    path = folder / "plain.md"
+    path.write_text(text)
+    return path
+
+
+def test_readme_numbers_match_results_json():
+    """The charter rule: every README number comes from benchmarks/results.json."""
+    root = pathlib.Path(__file__).resolve().parents[1]
+    results_path = root / "benchmarks" / "results.json"
+    readme_path = root / "README.md"
+    if not results_path.exists() or not readme_path.exists():
+        pytest.skip("benchmark results not generated yet")
+    results = json.loads(results_path.read_text())
+    readme = readme_path.read_text()
+    assert results_table(results) in readme
+    for config in results["configs"]:
+        value = config["metrics"]["fidelity"]["mean_ks"]["value"]
+        assert f"| {config['name']} |" in readme
+        assert f"{value:.3f}" in readme
