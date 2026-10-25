@@ -1,0 +1,5485 @@
+{
+  "meta": {
+    "generated_at": "2026-10-25T00:10:04+00:00",
+    "synthia_version": "0.1.0",
+    "python": "3.13.17",
+    "torch_version": "2.14.1",
+    "numpy_version": "2.5.4",
+    "platform": "Darwin arm64",
+    "cpu_count": 15,
+    "torch_threads": 4,
+    "profile": "full",
+    "seed": 0,
+    "n_rows": 12000,
+    "n_train": 9000,
+    "n_holdout": 3000,
+    "n_synthetic": 9000,
+    "n_boot": 200,
+    "target": "readmitted_30d",
+    "command": "python -m synthia.bench --check --readme README.md",
+    "total_seconds": 519.3
+  },
+  "configs": [
+    {
+      "name": "copula",
+      "generator": "copula",
+      "family": "exact",
+      "epsilon_target": null,
+      "privacy_report": null,
+      "fit_seconds": 0.019,
+      "eval_seconds": 32.785,
+      "training": {},
+      "headline": {
+        "mean_ks": 0.01159722222222222,
+        "mean_tvd": 0.0037037037037037043,
+        "correlation_delta_mean": 0.057277714212403685,
+        "utility_ratio": 0.9634799590347426,
+        "membership_auc": 0.5017557777777778,
+        "dcr_share_train": 0.48677777777777775,
+        "nndr_synthetic": 0.9286046792864411,
+        "exact_match_rate": 0.0
+      },
+      "metrics": {
+        "n_train": 9000,
+        "n_holdout": 3000,
+        "n_synthetic": 9000,
+        "n_boot": 200,
+        "seconds": 32.785,
+        "fidelity": {
+          "per_column": {
+            "age": {
+              "metric": "ks",
+              "value": 0.01588888888888884,
+              "ci_low": 0.008316666666666616,
+              "ci_high": 0.02854166666666659,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "sex": {
+              "metric": "tvd",
+              "value": 0.002333333333333326,
+              "ci_low": 0.0,
+              "ci_high": 0.013460555555555573,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "bmi": {
+              "metric": "ks",
+              "value": 0.01011111111111107,
+              "ci_low": 0.0057661111111110604,
+              "ci_high": 0.01758555555555551,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "smoker": {
+              "metric": "tvd",
+              "value": 0.0047777777777777974,
+              "ci_low": 0.0,
+              "ci_high": 0.014989999999999963,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "systolic_bp": {
+              "metric": "ks",
+              "value": 0.008000000000000007,
+              "ci_low": 0.002486111111111038,
+              "ci_high": 0.017277777777777815,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "diastolic_bp": {
+              "metric": "ks",
+              "value": 0.010666666666666685,
+              "ci_low": 0.004411666666666689,
+              "ci_high": 0.020006111111111103,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "heart_rate": {
+              "metric": "ks",
+              "value": 0.011555555555555652,
+              "ci_low": 0.00397111111111125,
+              "ci_high": 0.021868333333333424,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "glucose": {
+              "metric": "ks",
+              "value": 0.014111111111111074,
+              "ci_low": 0.006931111111111063,
+              "ci_high": 0.022389444444444382,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "cholesterol": {
+              "metric": "ks",
+              "value": 0.00988888888888889,
+              "ci_low": 0.00423333333333333,
+              "ci_high": 0.01957500000000003,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "hypertension": {
+              "metric": "tvd",
+              "value": 0.005222222222222239,
+              "ci_low": 0.0,
+              "ci_high": 0.015930555555555594,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "diabetes": {
+              "metric": "tvd",
+              "value": 0.002777777777777775,
+              "ci_low": 0.0,
+              "ci_high": 0.010174444444444469,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "cad": {
+              "metric": "tvd",
+              "value": 0.0007777777777777731,
+              "ci_low": 0.0,
+              "ci_high": 0.006555,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "length_of_stay": {
+              "metric": "ks",
+              "value": 0.012555555555555542,
+              "ci_low": 0.009134444444444416,
+              "ci_high": 0.019706666666666626,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "readmitted_30d": {
+              "metric": "tvd",
+              "value": 0.006333333333333316,
+              "ci_low": 0.0,
+              "ci_high": 0.01324166666666663,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            }
+          },
+          "mean_ks": {
+            "value": 0.01159722222222222,
+            "ci_low": 0.008770972222222223,
+            "ci_high": 0.014915069444444443,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "mean_tvd": {
+            "value": 0.0037037037037037043,
+            "ci_low": 0.0005130555555555609,
+            "ci_high": 0.007146388888888916,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "correlation_delta_mean": {
+            "value": 0.057277714212403685,
+            "ci_low": 0.050658035804546836,
+            "ci_high": 0.0633458330863036,
+            "n_boot": 100,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "correlation_delta_max": {
+            "value": 0.4126280456367847,
+            "ci_low": 0.38492621202267335,
+            "ci_high": 0.43923902486260813,
+            "n_boot": 100,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          }
+        },
+        "utility": {
+          "target": "readmitted_30d",
+          "positive": "yes",
+          "mean_ratio": 0.9634799590347426,
+          "models": [
+            {
+              "model": "logistic_regression",
+              "trtr_auc": {
+                "value": 0.7584738451598219,
+                "ci_low": 0.7291666301409085,
+                "ci_high": 0.7903791392268623,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "tstr_auc": {
+                "value": 0.7466345077221849,
+                "ci_low": 0.7115013043039473,
+                "ci_high": 0.7771126891761895,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "ratio": {
+                "value": 0.9843905791700144,
+                "ci_low": 0.9675967468408152,
+                "ci_high": 1.002001955154809,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "degenerate": false
+            },
+            {
+              "model": "gradient_boosting",
+              "trtr_auc": {
+                "value": 0.7375166882650446,
+                "ci_low": 0.7083623971717403,
+                "ci_high": 0.7697357068363031,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "tstr_auc": {
+                "value": 0.6951606172853102,
+                "ci_low": 0.6634762672626179,
+                "ci_high": 0.7332186477877888,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "ratio": {
+                "value": 0.9425693388994708,
+                "ci_low": 0.9099463520891794,
+                "ci_high": 0.975645877433005,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "degenerate": false
+            }
+          ]
+        },
+        "privacy": {
+          "membership_auc": {
+            "value": 0.5017557777777778,
+            "ci_low": 0.4913906877561545,
+            "ci_high": 0.513247322608863,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "dcr_share_train": {
+            "value": 0.48677777777777775,
+            "ci_low": 0.47666222222222226,
+            "ci_high": 0.4955594444444445,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "nndr_synthetic": {
+            "value": 0.9286046792864411,
+            "ci_low": 0.9262345702736842,
+            "ci_high": 0.9309092205278559,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "nndr_holdout": {
+            "value": 0.9242027305695754,
+            "ci_low": 0.9206603458727568,
+            "ci_high": 0.9274426945237555,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "exact_match_rate": {
+            "value": 0.0,
+            "ci_low": 0.0,
+            "ci_high": 0.0,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "exact_match_rate_holdout": {
+            "value": 0.0,
+            "ci_low": 0.0,
+            "ci_high": 0.0,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          }
+        }
+      },
+      "gates": {
+        "membership_auc": {
+          "value": 0.5017557777777778,
+          "op": "<=",
+          "threshold": 0.56,
+          "pass": true
+        },
+        "dcr_share_train": {
+          "value": 0.48677777777777775,
+          "op": "<=",
+          "threshold": 0.56,
+          "pass": true
+        },
+        "exact_match_rate": {
+          "value": 0.0,
+          "op": "<=",
+          "threshold": 0.001,
+          "pass": true
+        },
+        "nndr_synthetic": {
+          "value": 0.9286046792864411,
+          "op": ">=",
+          "threshold": 0.5,
+          "pass": true
+        },
+        "mean_ks": {
+          "value": 0.01159722222222222,
+          "op": "<=",
+          "threshold": 0.05,
+          "pass": true
+        },
+        "mean_tvd": {
+          "value": 0.0037037037037037043,
+          "op": "<=",
+          "threshold": 0.03,
+          "pass": true
+        },
+        "correlation_delta_mean": {
+          "value": 0.057277714212403685,
+          "op": "<=",
+          "threshold": 0.1,
+          "pass": true
+        },
+        "utility_ratio": {
+          "value": 0.9634799590347426,
+          "op": ">=",
+          "threshold": 0.85,
+          "pass": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "name": "bayesnet",
+      "generator": "bayesnet",
+      "family": "exact",
+      "epsilon_target": null,
+      "privacy_report": null,
+      "fit_seconds": 0.021,
+      "eval_seconds": 21.499,
+      "training": {},
+      "headline": {
+        "mean_ks": 0.016513888888888904,
+        "mean_tvd": 0.008537037037037041,
+        "correlation_delta_mean": 0.05079251694260868,
+        "utility_ratio": 0.983511169879494,
+        "membership_auc": 0.5010135555555556,
+        "dcr_share_train": 0.5034444444444445,
+        "nndr_synthetic": 0.9281150382826168,
+        "exact_match_rate": 0.0
+      },
+      "metrics": {
+        "n_train": 9000,
+        "n_holdout": 3000,
+        "n_synthetic": 9000,
+        "n_boot": 200,
+        "seconds": 21.499,
+        "fidelity": {
+          "per_column": {
+            "age": {
+              "metric": "ks",
+              "value": 0.00933333333333336,
+              "ci_low": 0.0032505555555555846,
+              "ci_high": 0.019367222222222216,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "sex": {
+              "metric": "tvd",
+              "value": 0.008333333333333331,
+              "ci_low": 0.0,
+              "ci_high": 0.020348888888888902,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "bmi": {
+              "metric": "ks",
+              "value": 0.008222222222222242,
+              "ci_low": 0.002292222222222251,
+              "ci_high": 0.017517222222222278,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "smoker": {
+              "metric": "tvd",
+              "value": 0.006111111111111123,
+              "ci_low": 0.0,
+              "ci_high": 0.01916166666666668,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "systolic_bp": {
+              "metric": "ks",
+              "value": 0.014000000000000012,
+              "ci_low": 0.006430555555555589,
+              "ci_high": 0.02466666666666667,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "diastolic_bp": {
+              "metric": "ks",
+              "value": 0.008777777777777773,
+              "ci_low": 0.0018333333333333483,
+              "ci_high": 0.02007222222222227,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "heart_rate": {
+              "metric": "ks",
+              "value": 0.020333333333333314,
+              "ci_low": 0.015141666666666602,
+              "ci_high": 0.026275000000000007,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "glucose": {
+              "metric": "ks",
+              "value": 0.00811111111111118,
+              "ci_low": 0.0020605555555556713,
+              "ci_high": 0.01606888888888902,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "cholesterol": {
+              "metric": "ks",
+              "value": 0.009777777777777778,
+              "ci_low": 0.003911666666666664,
+              "ci_high": 0.019831111111111136,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "hypertension": {
+              "metric": "tvd",
+              "value": 0.00977777777777783,
+              "ci_low": 7.333333333339005e-05,
+              "ci_high": 0.019556666666666712,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "diabetes": {
+              "metric": "tvd",
+              "value": 0.0013333333333333183,
+              "ci_low": 0.0,
+              "ci_high": 0.0074738888888888555,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "cad": {
+              "metric": "tvd",
+              "value": 0.012555555555555549,
+              "ci_low": 0.005089999999999966,
+              "ci_high": 0.01975944444444444,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "length_of_stay": {
+              "metric": "ks",
+              "value": 0.05355555555555558,
+              "ci_low": 0.04655166666666666,
+              "ci_high": 0.062123888888888985,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "readmitted_30d": {
+              "metric": "tvd",
+              "value": 0.013111111111111094,
+              "ci_low": 0.004009999999999974,
+              "ci_high": 0.0208211111111111,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            }
+          },
+          "mean_ks": {
+            "value": 0.016513888888888904,
+            "ci_low": 0.013789027777777782,
+            "ci_high": 0.019777916666666676,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "mean_tvd": {
+            "value": 0.008537037037037041,
+            "ci_low": 0.005139629629629636,
+            "ci_high": 0.013005833333333322,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "correlation_delta_mean": {
+            "value": 0.05079251694260868,
+            "ci_low": 0.04589141069936285,
+            "ci_high": 0.055715411049073495,
+            "n_boot": 100,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "correlation_delta_max": {
+            "value": 0.17640649084387228,
+            "ci_low": 0.15443973157112978,
+            "ci_high": 0.20580995655245915,
+            "n_boot": 100,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          }
+        },
+        "utility": {
+          "target": "readmitted_30d",
+          "positive": "yes",
+          "mean_ratio": 0.983511169879494,
+          "models": [
+            {
+              "model": "logistic_regression",
+              "trtr_auc": {
+                "value": 0.7584738451598219,
+                "ci_low": 0.7291666301409085,
+                "ci_high": 0.7903791392268623,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "tstr_auc": {
+                "value": 0.7535300804830205,
+                "ci_low": 0.7218006293594382,
+                "ci_high": 0.7856313764333488,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "ratio": {
+                "value": 0.9934819576069105,
+                "ci_low": 0.9752977848090605,
+                "ci_high": 1.0117827010157412,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "degenerate": false
+            },
+            {
+              "model": "gradient_boosting",
+              "trtr_auc": {
+                "value": 0.7375166882650446,
+                "ci_low": 0.7083623971717403,
+                "ci_high": 0.7697357068363031,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "tstr_auc": {
+                "value": 0.7180022785370861,
+                "ci_low": 0.688683579308623,
+                "ci_high": 0.7525887809450087,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "ratio": {
+                "value": 0.9735403821520775,
+                "ci_low": 0.9402110324413359,
+                "ci_high": 1.0080574352972467,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "degenerate": false
+            }
+          ]
+        },
+        "privacy": {
+          "membership_auc": {
+            "value": 0.5010135555555556,
+            "ci_low": 0.48962509362568013,
+            "ci_high": 0.5113924873839437,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "dcr_share_train": {
+            "value": 0.5034444444444445,
+            "ci_low": 0.4933455555555556,
+            "ci_high": 0.5115788888888889,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "nndr_synthetic": {
+            "value": 0.9281150382826168,
+            "ci_low": 0.9260857419679326,
+            "ci_high": 0.9301676789179685,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "nndr_holdout": {
+            "value": 0.9242027305695754,
+            "ci_low": 0.9206603458727568,
+            "ci_high": 0.9274426945237555,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "exact_match_rate": {
+            "value": 0.0,
+            "ci_low": 0.0,
+            "ci_high": 0.0,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "exact_match_rate_holdout": {
+            "value": 0.0,
+            "ci_low": 0.0,
+            "ci_high": 0.0,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          }
+        }
+      },
+      "gates": {
+        "membership_auc": {
+          "value": 0.5010135555555556,
+          "op": "<=",
+          "threshold": 0.56,
+          "pass": true
+        },
+        "dcr_share_train": {
+          "value": 0.5034444444444445,
+          "op": "<=",
+          "threshold": 0.56,
+          "pass": true
+        },
+        "exact_match_rate": {
+          "value": 0.0,
+          "op": "<=",
+          "threshold": 0.001,
+          "pass": true
+        },
+        "nndr_synthetic": {
+          "value": 0.9281150382826168,
+          "op": ">=",
+          "threshold": 0.5,
+          "pass": true
+        },
+        "mean_ks": {
+          "value": 0.016513888888888904,
+          "op": "<=",
+          "threshold": 0.05,
+          "pass": true
+        },
+        "mean_tvd": {
+          "value": 0.008537037037037041,
+          "op": "<=",
+          "threshold": 0.03,
+          "pass": true
+        },
+        "correlation_delta_mean": {
+          "value": 0.05079251694260868,
+          "op": "<=",
+          "threshold": 0.1,
+          "pass": true
+        },
+        "utility_ratio": {
+          "value": 0.983511169879494,
+          "op": ">=",
+          "threshold": 0.85,
+          "pass": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "name": "ctgan",
+      "generator": "ctgan",
+      "family": "ctgan",
+      "epsilon_target": null,
+      "privacy_report": null,
+      "fit_seconds": 63.771,
+      "eval_seconds": 18.943,
+      "training": {
+        "epochs_completed": 300,
+        "steps_completed": 5400,
+        "train_seconds": 57.665,
+        "pac": 10,
+        "batch_size": 500
+      },
+      "headline": {
+        "mean_ks": 0.0886388888888889,
+        "mean_tvd": 0.06388888888888888,
+        "correlation_delta_mean": 0.06851714977728866,
+        "utility_ratio": 0.9337866065424623,
+        "membership_auc": 0.4905950740740741,
+        "dcr_share_train": 0.49422222222222223,
+        "nndr_synthetic": 0.9337800021998452,
+        "exact_match_rate": 0.0
+      },
+      "metrics": {
+        "n_train": 9000,
+        "n_holdout": 3000,
+        "n_synthetic": 9000,
+        "n_boot": 200,
+        "seconds": 18.943,
+        "fidelity": {
+          "per_column": {
+            "age": {
+              "metric": "ks",
+              "value": 0.10888888888888892,
+              "ci_low": 0.09670388888888899,
+              "ci_high": 0.12052055555555567,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "sex": {
+              "metric": "tvd",
+              "value": 0.020333333333333314,
+              "ci_low": 0.005930555555555541,
+              "ci_high": 0.03474444444444445,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "bmi": {
+              "metric": "ks",
+              "value": 0.07577777777777772,
+              "ci_low": 0.061938888888888835,
+              "ci_high": 0.08951388888888884,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "smoker": {
+              "metric": "tvd",
+              "value": 0.18755555555555553,
+              "ci_low": 0.17255555555555555,
+              "ci_high": 0.1999,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "systolic_bp": {
+              "metric": "ks",
+              "value": 0.07222222222222222,
+              "ci_low": 0.0626077777777778,
+              "ci_high": 0.08250777777777779,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "diastolic_bp": {
+              "metric": "ks",
+              "value": 0.061888888888888896,
+              "ci_low": 0.05118000000000001,
+              "ci_high": 0.07141055555555557,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "heart_rate": {
+              "metric": "ks",
+              "value": 0.0672222222222223,
+              "ci_low": 0.054990000000000046,
+              "ci_high": 0.0814511111111112,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "glucose": {
+              "metric": "ks",
+              "value": 0.16144444444444445,
+              "ci_low": 0.14693888888888892,
+              "ci_high": 0.17731944444444442,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "cholesterol": {
+              "metric": "ks",
+              "value": 0.07700000000000007,
+              "ci_low": 0.06318222222222224,
+              "ci_high": 0.0894155555555556,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "hypertension": {
+              "metric": "tvd",
+              "value": 0.0646666666666667,
+              "ci_low": 0.052480000000000034,
+              "ci_high": 0.07773277777777785,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "diabetes": {
+              "metric": "tvd",
+              "value": 0.010111111111111092,
+              "ci_low": 0.0009733333333333139,
+              "ci_high": 0.01877055555555554,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "cad": {
+              "metric": "tvd",
+              "value": 0.05088888888888888,
+              "ci_low": 0.042097222222222216,
+              "ci_high": 0.059661111111111095,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "length_of_stay": {
+              "metric": "ks",
+              "value": 0.08466666666666667,
+              "ci_low": 0.07294,
+              "ci_high": 0.09898444444444447,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "readmitted_30d": {
+              "metric": "tvd",
+              "value": 0.0497777777777778,
+              "ci_low": 0.04042611111111109,
+              "ci_high": 0.05848166666666672,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            }
+          },
+          "mean_ks": {
+            "value": 0.0886388888888889,
+            "ci_low": 0.08413368055555558,
+            "ci_high": 0.09330312500000003,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "mean_tvd": {
+            "value": 0.06388888888888888,
+            "ci_low": 0.05713138888888889,
+            "ci_high": 0.06984574074074076,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "correlation_delta_mean": {
+            "value": 0.06851714977728866,
+            "ci_low": 0.06352810169890782,
+            "ci_high": 0.07301543357538709,
+            "n_boot": 100,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "correlation_delta_max": {
+            "value": 0.3594754760246562,
+            "ci_low": 0.334976881575993,
+            "ci_high": 0.38665349884861216,
+            "n_boot": 100,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          }
+        },
+        "utility": {
+          "target": "readmitted_30d",
+          "positive": "yes",
+          "mean_ratio": 0.9337866065424623,
+          "models": [
+            {
+              "model": "logistic_regression",
+              "trtr_auc": {
+                "value": 0.7584738451598219,
+                "ci_low": 0.7291666301409085,
+                "ci_high": 0.7903791392268623,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "tstr_auc": {
+                "value": 0.7068592287482364,
+                "ci_low": 0.6699965775199671,
+                "ci_high": 0.740458687761399,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "ratio": {
+                "value": 0.9319493786885829,
+                "ci_low": 0.909133642812902,
+                "ci_high": 0.9560235377851163,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "degenerate": false
+            },
+            {
+              "model": "gradient_boosting",
+              "trtr_auc": {
+                "value": 0.7375166882650446,
+                "ci_low": 0.7083623971717403,
+                "ci_high": 0.7697357068363031,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "tstr_auc": {
+                "value": 0.6900381918058324,
+                "ci_low": 0.6540961711814065,
+                "ci_high": 0.7244322908352921,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "ratio": {
+                "value": 0.9356238343963417,
+                "ci_low": 0.9038234232854875,
+                "ci_high": 0.9667627459217739,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "degenerate": false
+            }
+          ]
+        },
+        "privacy": {
+          "membership_auc": {
+            "value": 0.4905950740740741,
+            "ci_low": 0.4808884520926984,
+            "ci_high": 0.5011185108040114,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "dcr_share_train": {
+            "value": 0.49422222222222223,
+            "ci_low": 0.48553777777777773,
+            "ci_high": 0.5028794444444444,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "nndr_synthetic": {
+            "value": 0.9337800021998452,
+            "ci_low": 0.9315482132183875,
+            "ci_high": 0.9360832394350037,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "nndr_holdout": {
+            "value": 0.9242027305695754,
+            "ci_low": 0.9206603458727568,
+            "ci_high": 0.9274426945237555,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "exact_match_rate": {
+            "value": 0.0,
+            "ci_low": 0.0,
+            "ci_high": 0.0,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "exact_match_rate_holdout": {
+            "value": 0.0,
+            "ci_low": 0.0,
+            "ci_high": 0.0,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          }
+        }
+      },
+      "gates": {
+        "membership_auc": {
+          "value": 0.4905950740740741,
+          "op": "<=",
+          "threshold": 0.56,
+          "pass": true
+        },
+        "dcr_share_train": {
+          "value": 0.49422222222222223,
+          "op": "<=",
+          "threshold": 0.56,
+          "pass": true
+        },
+        "exact_match_rate": {
+          "value": 0.0,
+          "op": "<=",
+          "threshold": 0.001,
+          "pass": true
+        },
+        "nndr_synthetic": {
+          "value": 0.9337800021998452,
+          "op": ">=",
+          "threshold": 0.5,
+          "pass": true
+        },
+        "mean_ks": {
+          "value": 0.0886388888888889,
+          "op": "<=",
+          "threshold": 0.15,
+          "pass": true
+        },
+        "mean_tvd": {
+          "value": 0.06388888888888888,
+          "op": "<=",
+          "threshold": 0.1,
+          "pass": true
+        },
+        "utility_ratio": {
+          "value": 0.9337866065424623,
+          "op": ">=",
+          "threshold": 0.8,
+          "pass": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "name": "copula-dp0.5",
+      "generator": "copula",
+      "family": "dp",
+      "epsilon_target": 0.5,
+      "privacy_report": {
+        "epsilon_target": 0.5,
+        "epsilon_spent": 0.4999839716387213,
+        "delta": 1e-05,
+        "noise_multiplier": 13.503067843068525,
+        "rdp_order": 48.0,
+        "adjacency": "add or remove one record",
+        "queries": [
+          {
+            "mechanism": "histograms and count",
+            "noise_multiplier": 54.0122713722741,
+            "count": 15
+          },
+          {
+            "mechanism": "second moment of clipped normal scores",
+            "noise_multiplier": 13.503067843068525,
+            "count": 1
+          }
+        ],
+        "caveats": [
+          "category domains and numeric bounds are treated as public"
+        ]
+      },
+      "fit_seconds": 0.012,
+      "eval_seconds": 19.689,
+      "training": {},
+      "headline": {
+        "mean_ks": 0.04937500000000002,
+        "mean_tvd": 0.0038888888888888827,
+        "correlation_delta_mean": 0.08276995753026908,
+        "utility_ratio": 0.7853526371111317,
+        "membership_auc": 0.5021458148148148,
+        "dcr_share_train": 0.475,
+        "nndr_synthetic": 0.9298897804930797,
+        "exact_match_rate": 0.0
+      },
+      "metrics": {
+        "n_train": 9000,
+        "n_holdout": 3000,
+        "n_synthetic": 9000,
+        "n_boot": 200,
+        "seconds": 19.689,
+        "fidelity": {
+          "per_column": {
+            "age": {
+              "metric": "ks",
+              "value": 0.03400000000000003,
+              "ci_low": 0.019393888888888898,
+              "ci_high": 0.048555000000000105,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "sex": {
+              "metric": "tvd",
+              "value": 0.003555555555555562,
+              "ci_low": 0.0,
+              "ci_high": 0.016529444444444433,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "bmi": {
+              "metric": "ks",
+              "value": 0.020000000000000004,
+              "ci_low": 0.013916111111111101,
+              "ci_high": 0.02782444444444447,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "smoker": {
+              "metric": "tvd",
+              "value": 0.009111111111111111,
+              "ci_low": 0.000383333333333318,
+              "ci_high": 0.01984444444444443,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "systolic_bp": {
+              "metric": "ks",
+              "value": 0.044333333333333336,
+              "ci_low": 0.03664944444444447,
+              "ci_high": 0.05166611111111114,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "diastolic_bp": {
+              "metric": "ks",
+              "value": 0.034777777777777796,
+              "ci_low": 0.0271866666666667,
+              "ci_high": 0.04331444444444444,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "heart_rate": {
+              "metric": "ks",
+              "value": 0.021666666666666723,
+              "ci_low": 0.014653333333333414,
+              "ci_high": 0.030675555555555654,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "glucose": {
+              "metric": "ks",
+              "value": 0.09233333333333338,
+              "ci_low": 0.07991777777777784,
+              "ci_high": 0.10439277777777788,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "cholesterol": {
+              "metric": "ks",
+              "value": 0.014777777777777779,
+              "ci_low": 0.008881666666666703,
+              "ci_high": 0.023348333333333356,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "hypertension": {
+              "metric": "tvd",
+              "value": 0.003666666666666679,
+              "ci_low": 0.0,
+              "ci_high": 0.01275722222222227,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "diabetes": {
+              "metric": "tvd",
+              "value": 0.0020000000000000018,
+              "ci_low": 0.0,
+              "ci_high": 0.009502222222222245,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "cad": {
+              "metric": "tvd",
+              "value": 0.0018888888888888566,
+              "ci_low": 0.0,
+              "ci_high": 0.007877222222222204,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "length_of_stay": {
+              "metric": "ks",
+              "value": 0.13311111111111112,
+              "ci_low": 0.11958666666666674,
+              "ci_high": 0.14705888888888896,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "readmitted_30d": {
+              "metric": "tvd",
+              "value": 0.0031111111111110853,
+              "ci_low": 0.0,
+              "ci_high": 0.009225555555555504,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            }
+          },
+          "mean_ks": {
+            "value": 0.04937500000000002,
+            "ci_low": 0.04535201388888889,
+            "ci_high": 0.052718333333333325,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "mean_tvd": {
+            "value": 0.0038888888888888827,
+            "ci_low": 0.0009608333333333162,
+            "ci_high": 0.007462685185185175,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "correlation_delta_mean": {
+            "value": 0.08276995753026908,
+            "ci_low": 0.07777085489428705,
+            "ci_high": 0.08776896701421437,
+            "n_boot": 100,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "correlation_delta_max": {
+            "value": 0.41982490885265206,
+            "ci_low": 0.39012082759704875,
+            "ci_high": 0.44350378479562913,
+            "n_boot": 100,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          }
+        },
+        "utility": {
+          "target": "readmitted_30d",
+          "positive": "yes",
+          "mean_ratio": 0.7853526371111317,
+          "models": [
+            {
+              "model": "logistic_regression",
+              "trtr_auc": {
+                "value": 0.7584738451598219,
+                "ci_low": 0.7291666301409085,
+                "ci_high": 0.7903791392268623,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "tstr_auc": {
+                "value": 0.5740812123481536,
+                "ci_low": 0.5317216534830663,
+                "ci_high": 0.6064558801932208,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "ratio": {
+                "value": 0.7568899257523982,
+                "ci_low": 0.7092703307192535,
+                "ci_high": 0.7982009133697048,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "degenerate": false
+            },
+            {
+              "model": "gradient_boosting",
+              "trtr_auc": {
+                "value": 0.7375166882650446,
+                "ci_low": 0.7083623971717403,
+                "ci_high": 0.7697357068363031,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "tstr_auc": {
+                "value": 0.6002024006627582,
+                "ci_low": 0.5681840514831813,
+                "ci_high": 0.6388559263734247,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "ratio": {
+                "value": 0.8138153484698653,
+                "ci_low": 0.777396133691911,
+                "ci_high": 0.8603342711142054,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "degenerate": false
+            }
+          ]
+        },
+        "privacy": {
+          "membership_auc": {
+            "value": 0.5021458148148148,
+            "ci_low": 0.48976763106878546,
+            "ci_high": 0.5139924161081145,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "dcr_share_train": {
+            "value": 0.475,
+            "ci_low": 0.4640038888888889,
+            "ci_high": 0.4856816666666666,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "nndr_synthetic": {
+            "value": 0.9298897804930797,
+            "ci_low": 0.9277844672012898,
+            "ci_high": 0.9319127842156193,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "nndr_holdout": {
+            "value": 0.9242027305695754,
+            "ci_low": 0.9206603458727568,
+            "ci_high": 0.9274426945237555,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "exact_match_rate": {
+            "value": 0.0,
+            "ci_low": 0.0,
+            "ci_high": 0.0,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "exact_match_rate_holdout": {
+            "value": 0.0,
+            "ci_low": 0.0,
+            "ci_high": 0.0,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          }
+        }
+      },
+      "gates": {
+        "membership_auc": {
+          "value": 0.5021458148148148,
+          "op": "<=",
+          "threshold": 0.56,
+          "pass": true
+        },
+        "dcr_share_train": {
+          "value": 0.475,
+          "op": "<=",
+          "threshold": 0.56,
+          "pass": true
+        },
+        "exact_match_rate": {
+          "value": 0.0,
+          "op": "<=",
+          "threshold": 0.001,
+          "pass": true
+        },
+        "nndr_synthetic": {
+          "value": 0.9298897804930797,
+          "op": ">=",
+          "threshold": 0.5,
+          "pass": true
+        },
+        "utility_ratio": {
+          "value": 0.7853526371111317,
+          "op": ">=",
+          "threshold": 0.5,
+          "pass": true
+        },
+        "epsilon_spent": {
+          "value": 0.4999839716387213,
+          "op": "<=",
+          "threshold": 0.5,
+          "pass": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "name": "bayesnet-dp0.5",
+      "generator": "bayesnet",
+      "family": "dp",
+      "epsilon_target": 0.5,
+      "privacy_report": {
+        "epsilon_target": 0.5,
+        "epsilon_spent": 0.49997869875719964,
+        "delta": 1e-05,
+        "noise_multiplier": 16.802608604356035,
+        "rdp_order": 48.0,
+        "adjacency": "add or remove one record",
+        "queries": [
+          {
+            "mechanism": "pairwise contingency tables",
+            "noise_multiplier": 16.802608604356035,
+            "count": 1
+          },
+          {
+            "mechanism": "conditional count tables",
+            "noise_multiplier": 16.802608604356035,
+            "count": 1
+          },
+          {
+            "mechanism": "within-bin numeric profiles",
+            "noise_multiplier": 16.802608604356035,
+            "count": 1
+          }
+        ],
+        "caveats": [
+          "category domains and numeric bounds are treated as public"
+        ]
+      },
+      "fit_seconds": 0.019,
+      "eval_seconds": 27.39,
+      "training": {},
+      "headline": {
+        "mean_ks": 0.04013888888888891,
+        "mean_tvd": 0.01046296296296297,
+        "correlation_delta_mean": 0.13819641415880402,
+        "utility_ratio": 0.8275555835549475,
+        "membership_auc": 0.5025822962962962,
+        "dcr_share_train": 0.49077777777777776,
+        "nndr_synthetic": 0.937529787279719,
+        "exact_match_rate": 0.0
+      },
+      "metrics": {
+        "n_train": 9000,
+        "n_holdout": 3000,
+        "n_synthetic": 9000,
+        "n_boot": 200,
+        "seconds": 27.39,
+        "fidelity": {
+          "per_column": {
+            "age": {
+              "metric": "ks",
+              "value": 0.0367777777777778,
+              "ci_low": 0.02624444444444446,
+              "ci_high": 0.05170833333333334,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "sex": {
+              "metric": "tvd",
+              "value": 0.0030000000000000027,
+              "ci_low": 0.0,
+              "ci_high": 0.013002777777777821,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "bmi": {
+              "metric": "ks",
+              "value": 0.044222222222222274,
+              "ci_low": 0.031021666666666697,
+              "ci_high": 0.060816111111111154,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "smoker": {
+              "metric": "tvd",
+              "value": 0.013000000000000012,
+              "ci_low": 0.0023022222222222476,
+              "ci_high": 0.023982777777777808,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "systolic_bp": {
+              "metric": "ks",
+              "value": 0.05277777777777781,
+              "ci_low": 0.04475611111111108,
+              "ci_high": 0.06309500000000007,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "diastolic_bp": {
+              "metric": "ks",
+              "value": 0.0464444444444444,
+              "ci_low": 0.03960888888888886,
+              "ci_high": 0.052617222222222204,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "heart_rate": {
+              "metric": "ks",
+              "value": 0.03600000000000003,
+              "ci_low": 0.029385555555555637,
+              "ci_high": 0.04283277777777789,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "glucose": {
+              "metric": "ks",
+              "value": 0.02544444444444449,
+              "ci_low": 0.019149444444444396,
+              "ci_high": 0.03496611111111118,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "cholesterol": {
+              "metric": "ks",
+              "value": 0.017555555555555602,
+              "ci_low": 0.01043166666666671,
+              "ci_high": 0.02900944444444451,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "hypertension": {
+              "metric": "tvd",
+              "value": 0.019000000000000017,
+              "ci_low": 0.0069400000000000225,
+              "ci_high": 0.031756666666666704,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "diabetes": {
+              "metric": "tvd",
+              "value": 0.007777777777777772,
+              "ci_low": 0.0008016666666666722,
+              "ci_high": 0.01647111111111114,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "cad": {
+              "metric": "tvd",
+              "value": 0.019777777777777776,
+              "ci_low": 0.01164499999999999,
+              "ci_high": 0.027650555555555553,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "length_of_stay": {
+              "metric": "ks",
+              "value": 0.06188888888888888,
+              "ci_low": 0.05008333333333329,
+              "ci_high": 0.0733111111111111,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "readmitted_30d": {
+              "metric": "tvd",
+              "value": 0.00022222222222222782,
+              "ci_low": 0.0,
+              "ci_high": 0.006323333333333334,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            }
+          },
+          "mean_ks": {
+            "value": 0.04013888888888891,
+            "ci_low": 0.03621541666666669,
+            "ci_high": 0.04419909722222225,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "mean_tvd": {
+            "value": 0.01046296296296297,
+            "ci_low": 0.006141574074074079,
+            "ci_high": 0.014875370370370376,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "correlation_delta_mean": {
+            "value": 0.13819641415880402,
+            "ci_low": 0.1337155729483262,
+            "ci_high": 0.14315625442573243,
+            "n_boot": 100,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "correlation_delta_max": {
+            "value": 0.5503622734987336,
+            "ci_low": 0.5273324831032615,
+            "ci_high": 0.5734488690279226,
+            "n_boot": 100,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          }
+        },
+        "utility": {
+          "target": "readmitted_30d",
+          "positive": "yes",
+          "mean_ratio": 0.8275555835549475,
+          "models": [
+            {
+              "model": "logistic_regression",
+              "trtr_auc": {
+                "value": 0.7584738451598219,
+                "ci_low": 0.7291666301409085,
+                "ci_high": 0.7903791392268623,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "tstr_auc": {
+                "value": 0.704475453107046,
+                "ci_low": 0.6665022500780684,
+                "ci_high": 0.7422985632129546,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "ratio": {
+                "value": 0.928806520623796,
+                "ci_low": 0.9044259255518808,
+                "ci_high": 0.9576935542790131,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "degenerate": false
+            },
+            {
+              "model": "gradient_boosting",
+              "trtr_auc": {
+                "value": 0.7375166882650446,
+                "ci_low": 0.7083623971717403,
+                "ci_high": 0.7697357068363031,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "tstr_auc": {
+                "value": 0.5356617975479416,
+                "ci_low": 0.4989317802546952,
+                "ci_high": 0.5686837217841887,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "ratio": {
+                "value": 0.7263046464860989,
+                "ci_low": 0.6788615398362625,
+                "ci_high": 0.7776612746785521,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "degenerate": false
+            }
+          ]
+        },
+        "privacy": {
+          "membership_auc": {
+            "value": 0.5025822962962962,
+            "ci_low": 0.49139218837888143,
+            "ci_high": 0.5140218583469315,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "dcr_share_train": {
+            "value": 0.49077777777777776,
+            "ci_low": 0.4813627777777778,
+            "ci_high": 0.5009266666666667,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "nndr_synthetic": {
+            "value": 0.937529787279719,
+            "ci_low": 0.9357551578249926,
+            "ci_high": 0.9395201196842373,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "nndr_holdout": {
+            "value": 0.9242027305695754,
+            "ci_low": 0.9206603458727568,
+            "ci_high": 0.9274426945237555,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "exact_match_rate": {
+            "value": 0.0,
+            "ci_low": 0.0,
+            "ci_high": 0.0,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "exact_match_rate_holdout": {
+            "value": 0.0,
+            "ci_low": 0.0,
+            "ci_high": 0.0,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          }
+        }
+      },
+      "gates": {
+        "membership_auc": {
+          "value": 0.5025822962962962,
+          "op": "<=",
+          "threshold": 0.56,
+          "pass": true
+        },
+        "dcr_share_train": {
+          "value": 0.49077777777777776,
+          "op": "<=",
+          "threshold": 0.56,
+          "pass": true
+        },
+        "exact_match_rate": {
+          "value": 0.0,
+          "op": "<=",
+          "threshold": 0.001,
+          "pass": true
+        },
+        "nndr_synthetic": {
+          "value": 0.937529787279719,
+          "op": ">=",
+          "threshold": 0.5,
+          "pass": true
+        },
+        "utility_ratio": {
+          "value": 0.8275555835549475,
+          "op": ">=",
+          "threshold": 0.5,
+          "pass": true
+        },
+        "epsilon_spent": {
+          "value": 0.49997869875719964,
+          "op": "<=",
+          "threshold": 0.5,
+          "pass": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "name": "copula-dp1",
+      "generator": "copula",
+      "family": "dp",
+      "epsilon_target": 1.0,
+      "privacy_report": {
+        "epsilon_target": 1.0,
+        "epsilon_spent": 0.9999644015270881,
+        "delta": 1e-05,
+        "noise_multiplier": 6.822852594999726,
+        "rdp_order": 25.0,
+        "adjacency": "add or remove one record",
+        "queries": [
+          {
+            "mechanism": "histograms and count",
+            "noise_multiplier": 27.291410379998904,
+            "count": 15
+          },
+          {
+            "mechanism": "second moment of clipped normal scores",
+            "noise_multiplier": 6.822852594999726,
+            "count": 1
+          }
+        ],
+        "caveats": [
+          "category domains and numeric bounds are treated as public"
+        ]
+      },
+      "fit_seconds": 0.02,
+      "eval_seconds": 31.55,
+      "training": {},
+      "headline": {
+        "mean_ks": 0.0424027777777778,
+        "mean_tvd": 0.0035185185185185215,
+        "correlation_delta_mean": 0.07420809775375599,
+        "utility_ratio": 0.8875612292030612,
+        "membership_auc": 0.5005288888888889,
+        "dcr_share_train": 0.48377777777777775,
+        "nndr_synthetic": 0.9298670803630571,
+        "exact_match_rate": 0.0
+      },
+      "metrics": {
+        "n_train": 9000,
+        "n_holdout": 3000,
+        "n_synthetic": 9000,
+        "n_boot": 200,
+        "seconds": 31.55,
+        "fidelity": {
+          "per_column": {
+            "age": {
+              "metric": "ks",
+              "value": 0.021666666666666723,
+              "ci_low": 0.01232611111111113,
+              "ci_high": 0.034709444444444564,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "sex": {
+              "metric": "tvd",
+              "value": 0.003333333333333327,
+              "ci_low": 0.0,
+              "ci_high": 0.015439999999999978,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "bmi": {
+              "metric": "ks",
+              "value": 0.015888888888888897,
+              "ci_low": 0.00944166666666658,
+              "ci_high": 0.02344722222222223,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "smoker": {
+              "metric": "tvd",
+              "value": 0.007000000000000034,
+              "ci_low": 0.0,
+              "ci_high": 0.016824444444444482,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "systolic_bp": {
+              "metric": "ks",
+              "value": 0.027888888888888963,
+              "ci_low": 0.02039555555555562,
+              "ci_high": 0.036734444444444486,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "diastolic_bp": {
+              "metric": "ks",
+              "value": 0.024222222222222256,
+              "ci_low": 0.016406666666666694,
+              "ci_high": 0.03398722222222232,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "heart_rate": {
+              "metric": "ks",
+              "value": 0.019333333333333313,
+              "ci_low": 0.012528333333333336,
+              "ci_high": 0.030761666666666642,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "glucose": {
+              "metric": "ks",
+              "value": 0.08533333333333337,
+              "ci_low": 0.07725833333333343,
+              "ci_high": 0.09604166666666666,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "cholesterol": {
+              "metric": "ks",
+              "value": 0.012222222222222218,
+              "ci_low": 0.00553166666666674,
+              "ci_high": 0.021217777777777794,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "hypertension": {
+              "metric": "tvd",
+              "value": 0.004888888888888915,
+              "ci_low": 0.0,
+              "ci_high": 0.015110555555555587,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "diabetes": {
+              "metric": "tvd",
+              "value": 0.0010000000000000009,
+              "ci_low": 0.0,
+              "ci_high": 0.007484999999999996,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "cad": {
+              "metric": "tvd",
+              "value": 0.0003333333333333105,
+              "ci_low": 0.0,
+              "ci_high": 0.005504444444444442,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "length_of_stay": {
+              "metric": "ks",
+              "value": 0.13266666666666665,
+              "ci_low": 0.11914444444444443,
+              "ci_high": 0.14627777777777773,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "readmitted_30d": {
+              "metric": "tvd",
+              "value": 0.004555555555555542,
+              "ci_low": 0.0,
+              "ci_high": 0.011723333333333317,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            }
+          },
+          "mean_ks": {
+            "value": 0.0424027777777778,
+            "ci_low": 0.038910625000000025,
+            "ci_high": 0.04601444444444447,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "mean_tvd": {
+            "value": 0.0035185185185185215,
+            "ci_low": 0.0006077777777777778,
+            "ci_high": 0.007022129629629627,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "correlation_delta_mean": {
+            "value": 0.07420809775375599,
+            "ci_low": 0.0680596122901533,
+            "ci_high": 0.0793662841530776,
+            "n_boot": 100,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "correlation_delta_max": {
+            "value": 0.39616031883918,
+            "ci_low": 0.36942805308096277,
+            "ci_high": 0.4182250066594876,
+            "n_boot": 100,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          }
+        },
+        "utility": {
+          "target": "readmitted_30d",
+          "positive": "yes",
+          "mean_ratio": 0.8875612292030612,
+          "models": [
+            {
+              "model": "logistic_regression",
+              "trtr_auc": {
+                "value": 0.7584738451598219,
+                "ci_low": 0.7291666301409085,
+                "ci_high": 0.7903791392268623,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "tstr_auc": {
+                "value": 0.6706020991420611,
+                "ci_low": 0.6324373525563635,
+                "ci_high": 0.7039553638345869,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "ratio": {
+                "value": 0.8841466365933227,
+                "ci_low": 0.8512707647057969,
+                "ci_high": 0.9160523445614905,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "degenerate": false
+            },
+            {
+              "model": "gradient_boosting",
+              "trtr_auc": {
+                "value": 0.7375166882650446,
+                "ci_low": 0.7083623971717403,
+                "ci_high": 0.7697357068363031,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "tstr_auc": {
+                "value": 0.6571095374276026,
+                "ci_low": 0.6232413298439552,
+                "ci_high": 0.6926155384829439,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "ratio": {
+                "value": 0.8909758218127998,
+                "ci_low": 0.8571102032767215,
+                "ci_high": 0.9321757062305719,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "degenerate": false
+            }
+          ]
+        },
+        "privacy": {
+          "membership_auc": {
+            "value": 0.5005288888888889,
+            "ci_low": 0.4899007373240179,
+            "ci_high": 0.5122850276248065,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "dcr_share_train": {
+            "value": 0.48377777777777775,
+            "ci_low": 0.47444,
+            "ci_high": 0.49490388888888887,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "nndr_synthetic": {
+            "value": 0.9298670803630571,
+            "ci_low": 0.9278461110126925,
+            "ci_high": 0.9322520716706989,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "nndr_holdout": {
+            "value": 0.9242027305695754,
+            "ci_low": 0.9206603458727568,
+            "ci_high": 0.9274426945237555,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "exact_match_rate": {
+            "value": 0.0,
+            "ci_low": 0.0,
+            "ci_high": 0.0,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "exact_match_rate_holdout": {
+            "value": 0.0,
+            "ci_low": 0.0,
+            "ci_high": 0.0,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          }
+        }
+      },
+      "gates": {
+        "membership_auc": {
+          "value": 0.5005288888888889,
+          "op": "<=",
+          "threshold": 0.56,
+          "pass": true
+        },
+        "dcr_share_train": {
+          "value": 0.48377777777777775,
+          "op": "<=",
+          "threshold": 0.56,
+          "pass": true
+        },
+        "exact_match_rate": {
+          "value": 0.0,
+          "op": "<=",
+          "threshold": 0.001,
+          "pass": true
+        },
+        "nndr_synthetic": {
+          "value": 0.9298670803630571,
+          "op": ">=",
+          "threshold": 0.5,
+          "pass": true
+        },
+        "utility_ratio": {
+          "value": 0.8875612292030612,
+          "op": ">=",
+          "threshold": 0.5,
+          "pass": true
+        },
+        "epsilon_spent": {
+          "value": 0.9999644015270881,
+          "op": "<=",
+          "threshold": 1.0,
+          "pass": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "name": "bayesnet-dp1",
+      "generator": "bayesnet",
+      "family": "dp",
+      "epsilon_target": 1.0,
+      "privacy_report": {
+        "epsilon_target": 1.0,
+        "epsilon_spent": 0.9999536448109887,
+        "delta": 1e-05,
+        "noise_multiplier": 8.490050042801482,
+        "rdp_order": 25.0,
+        "adjacency": "add or remove one record",
+        "queries": [
+          {
+            "mechanism": "pairwise contingency tables",
+            "noise_multiplier": 8.490050042801482,
+            "count": 1
+          },
+          {
+            "mechanism": "conditional count tables",
+            "noise_multiplier": 8.490050042801482,
+            "count": 1
+          },
+          {
+            "mechanism": "within-bin numeric profiles",
+            "noise_multiplier": 8.490050042801482,
+            "count": 1
+          }
+        ],
+        "caveats": [
+          "category domains and numeric bounds are treated as public"
+        ]
+      },
+      "fit_seconds": 0.022,
+      "eval_seconds": 18.74,
+      "training": {},
+      "headline": {
+        "mean_ks": 0.030583333333333344,
+        "mean_tvd": 0.011314814814814805,
+        "correlation_delta_mean": 0.1441421549896116,
+        "utility_ratio": 0.8220566583515172,
+        "membership_auc": 0.4992486296296296,
+        "dcr_share_train": 0.5198888888888888,
+        "nndr_synthetic": 0.9360257451161715,
+        "exact_match_rate": 0.0
+      },
+      "metrics": {
+        "n_train": 9000,
+        "n_holdout": 3000,
+        "n_synthetic": 9000,
+        "n_boot": 200,
+        "seconds": 18.74,
+        "fidelity": {
+          "per_column": {
+            "age": {
+              "metric": "ks",
+              "value": 0.018555555555555547,
+              "ci_low": 0.00985388888888888,
+              "ci_high": 0.029870555555555525,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "sex": {
+              "metric": "tvd",
+              "value": 0.007888888888888862,
+              "ci_low": 0.0,
+              "ci_high": 0.01986722222222223,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "bmi": {
+              "metric": "ks",
+              "value": 0.014444444444444482,
+              "ci_low": 0.006174444444444517,
+              "ci_high": 0.02419666666666665,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "smoker": {
+              "metric": "tvd",
+              "value": 0.02366666666666664,
+              "ci_low": 0.012571111111111075,
+              "ci_high": 0.03648499999999999,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "systolic_bp": {
+              "metric": "ks",
+              "value": 0.0178888888888889,
+              "ci_low": 0.00885944444444446,
+              "ci_high": 0.028567777777777796,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "diastolic_bp": {
+              "metric": "ks",
+              "value": 0.018888888888888844,
+              "ci_low": 0.011765555555555533,
+              "ci_high": 0.028551666666666645,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "heart_rate": {
+              "metric": "ks",
+              "value": 0.0387777777777778,
+              "ci_low": 0.033716111111111176,
+              "ci_high": 0.045285555555555614,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "glucose": {
+              "metric": "ks",
+              "value": 0.04211111111111121,
+              "ci_low": 0.03787777777777784,
+              "ci_high": 0.04679444444444456,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "cholesterol": {
+              "metric": "ks",
+              "value": 0.029333333333333322,
+              "ci_low": 0.01913055555555551,
+              "ci_high": 0.04036388888888887,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "hypertension": {
+              "metric": "tvd",
+              "value": 0.01044444444444445,
+              "ci_low": 0.0007577777777777652,
+              "ci_high": 0.0235383333333333,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "diabetes": {
+              "metric": "tvd",
+              "value": 0.003666666666666686,
+              "ci_low": 0.0,
+              "ci_high": 0.011131666666666703,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "cad": {
+              "metric": "tvd",
+              "value": 0.00588888888888886,
+              "ci_low": 0.00016944444444440775,
+              "ci_high": 0.013397222222222196,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "length_of_stay": {
+              "metric": "ks",
+              "value": 0.06466666666666665,
+              "ci_low": 0.05230444444444447,
+              "ci_high": 0.07709611111111114,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "readmitted_30d": {
+              "metric": "tvd",
+              "value": 0.016333333333333325,
+              "ci_low": 0.007428333333333369,
+              "ci_high": 0.023656111111111103,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            }
+          },
+          "mean_ks": {
+            "value": 0.030583333333333344,
+            "ci_low": 0.02708694444444449,
+            "ci_high": 0.03426784722222224,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "mean_tvd": {
+            "value": 0.011314814814814805,
+            "ci_low": 0.0065520370370370385,
+            "ci_high": 0.01655296296296297,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "correlation_delta_mean": {
+            "value": 0.1441421549896116,
+            "ci_low": 0.13875975641382576,
+            "ci_high": 0.1501971193702367,
+            "n_boot": 100,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "correlation_delta_max": {
+            "value": 0.4839821030000563,
+            "ci_low": 0.4439248598903266,
+            "ci_high": 0.51880066340971,
+            "n_boot": 100,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          }
+        },
+        "utility": {
+          "target": "readmitted_30d",
+          "positive": "yes",
+          "mean_ratio": 0.8220566583515172,
+          "models": [
+            {
+              "model": "logistic_regression",
+              "trtr_auc": {
+                "value": 0.7584738451598219,
+                "ci_low": 0.7291666301409085,
+                "ci_high": 0.7903791392268623,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "tstr_auc": {
+                "value": 0.6962962147160211,
+                "ci_low": 0.6655657608618673,
+                "ci_high": 0.7302731925614967,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "ratio": {
+                "value": 0.9180227098922588,
+                "ci_low": 0.890222279236274,
+                "ci_high": 0.9458245697369575,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "degenerate": false
+            },
+            {
+              "model": "gradient_boosting",
+              "trtr_auc": {
+                "value": 0.7375166882650446,
+                "ci_low": 0.7083623971717403,
+                "ci_high": 0.7697357068363031,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "tstr_auc": {
+                "value": 0.5355039397154397,
+                "ci_low": 0.4968132109811313,
+                "ci_high": 0.574460607854655,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "ratio": {
+                "value": 0.7260906068107755,
+                "ci_low": 0.6746498929603567,
+                "ci_high": 0.7808729529453347,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "degenerate": false
+            }
+          ]
+        },
+        "privacy": {
+          "membership_auc": {
+            "value": 0.4992486296296296,
+            "ci_low": 0.4884461548212875,
+            "ci_high": 0.5110006273150915,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "dcr_share_train": {
+            "value": 0.5198888888888888,
+            "ci_low": 0.5101655555555554,
+            "ci_high": 0.5305072222222221,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "nndr_synthetic": {
+            "value": 0.9360257451161715,
+            "ci_low": 0.9340622773129527,
+            "ci_high": 0.9376504527388458,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "nndr_holdout": {
+            "value": 0.9242027305695754,
+            "ci_low": 0.9206603458727568,
+            "ci_high": 0.9274426945237555,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "exact_match_rate": {
+            "value": 0.0,
+            "ci_low": 0.0,
+            "ci_high": 0.0,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "exact_match_rate_holdout": {
+            "value": 0.0,
+            "ci_low": 0.0,
+            "ci_high": 0.0,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          }
+        }
+      },
+      "gates": {
+        "membership_auc": {
+          "value": 0.4992486296296296,
+          "op": "<=",
+          "threshold": 0.56,
+          "pass": true
+        },
+        "dcr_share_train": {
+          "value": 0.5198888888888888,
+          "op": "<=",
+          "threshold": 0.56,
+          "pass": true
+        },
+        "exact_match_rate": {
+          "value": 0.0,
+          "op": "<=",
+          "threshold": 0.001,
+          "pass": true
+        },
+        "nndr_synthetic": {
+          "value": 0.9360257451161715,
+          "op": ">=",
+          "threshold": 0.5,
+          "pass": true
+        },
+        "utility_ratio": {
+          "value": 0.8220566583515172,
+          "op": ">=",
+          "threshold": 0.5,
+          "pass": true
+        },
+        "epsilon_spent": {
+          "value": 0.9999536448109887,
+          "op": "<=",
+          "threshold": 1.0,
+          "pass": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "name": "copula-dp2",
+      "generator": "copula",
+      "family": "dp",
+      "epsilon_target": 2.0,
+      "privacy_report": {
+        "epsilon_target": 2.0,
+        "epsilon_spent": 1.999982210784665,
+        "delta": 1e-05,
+        "noise_multiplier": 3.478896570763202,
+        "rdp_order": 13.0,
+        "adjacency": "add or remove one record",
+        "queries": [
+          {
+            "mechanism": "histograms and count",
+            "noise_multiplier": 13.915586283052807,
+            "count": 15
+          },
+          {
+            "mechanism": "second moment of clipped normal scores",
+            "noise_multiplier": 3.478896570763202,
+            "count": 1
+          }
+        ],
+        "caveats": [
+          "category domains and numeric bounds are treated as public"
+        ]
+      },
+      "fit_seconds": 0.013,
+      "eval_seconds": 19.348,
+      "training": {},
+      "headline": {
+        "mean_ks": 0.03868055555555555,
+        "mean_tvd": 0.0038703703703703886,
+        "correlation_delta_mean": 0.07001614975347996,
+        "utility_ratio": 0.927944602671664,
+        "membership_auc": 0.5013386666666667,
+        "dcr_share_train": 0.48633333333333334,
+        "nndr_synthetic": 0.9307183337606404,
+        "exact_match_rate": 0.0
+      },
+      "metrics": {
+        "n_train": 9000,
+        "n_holdout": 3000,
+        "n_synthetic": 9000,
+        "n_boot": 200,
+        "seconds": 19.348,
+        "fidelity": {
+          "per_column": {
+            "age": {
+              "metric": "ks",
+              "value": 0.015666666666666718,
+              "ci_low": 0.00807888888888888,
+              "ci_high": 0.02764000000000009,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "sex": {
+              "metric": "tvd",
+              "value": 0.0022222222222222365,
+              "ci_low": 0.0,
+              "ci_high": 0.013146111111111133,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "bmi": {
+              "metric": "ks",
+              "value": 0.013666666666666674,
+              "ci_low": 0.00723222222222222,
+              "ci_high": 0.021685000000000076,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "smoker": {
+              "metric": "tvd",
+              "value": 0.006111111111111109,
+              "ci_low": 0.0,
+              "ci_high": 0.01581333333333333,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "systolic_bp": {
+              "metric": "ks",
+              "value": 0.02011111111111108,
+              "ci_low": 0.012884999999999968,
+              "ci_high": 0.028554444444444434,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "diastolic_bp": {
+              "metric": "ks",
+              "value": 0.018000000000000016,
+              "ci_low": 0.011534444444444465,
+              "ci_high": 0.027426111111111085,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "heart_rate": {
+              "metric": "ks",
+              "value": 0.0198888888888889,
+              "ci_low": 0.012424444444444457,
+              "ci_high": 0.032096666666666676,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "glucose": {
+              "metric": "ks",
+              "value": 0.08099999999999996,
+              "ci_low": 0.07317111111111102,
+              "ci_high": 0.09108499999999997,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "cholesterol": {
+              "metric": "ks",
+              "value": 0.01055555555555554,
+              "ci_low": 0.004621666666666574,
+              "ci_high": 0.020407777777777796,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "hypertension": {
+              "metric": "tvd",
+              "value": 0.005333333333333384,
+              "ci_low": 0.0,
+              "ci_high": 0.015212777777777839,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "diabetes": {
+              "metric": "tvd",
+              "value": 0.0018888888888889122,
+              "ci_low": 0.0,
+              "ci_high": 0.008672777777777835,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "cad": {
+              "metric": "tvd",
+              "value": 0.0008888888888889182,
+              "ci_low": 0.0,
+              "ci_high": 0.0059572222222222925,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "length_of_stay": {
+              "metric": "ks",
+              "value": 0.13055555555555554,
+              "ci_low": 0.11775166666666666,
+              "ci_high": 0.14402666666666664,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "readmitted_30d": {
+              "metric": "tvd",
+              "value": 0.0067777777777777715,
+              "ci_low": 7.055555555556415e-05,
+              "ci_high": 0.014859444444444456,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            }
+          },
+          "mean_ks": {
+            "value": 0.03868055555555555,
+            "ci_low": 0.03542763888888889,
+            "ci_high": 0.04214187499999999,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "mean_tvd": {
+            "value": 0.0038703703703703886,
+            "ci_low": 0.0006686111111111315,
+            "ci_high": 0.0075963888888889225,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "correlation_delta_mean": {
+            "value": 0.07001614975347996,
+            "ci_low": 0.06356395849115733,
+            "ci_high": 0.075550288155097,
+            "n_boot": 100,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "correlation_delta_max": {
+            "value": 0.37780584087801583,
+            "ci_low": 0.35002557191104716,
+            "ci_high": 0.40098017664248264,
+            "n_boot": 100,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          }
+        },
+        "utility": {
+          "target": "readmitted_30d",
+          "positive": "yes",
+          "mean_ratio": 0.927944602671664,
+          "models": [
+            {
+              "model": "logistic_regression",
+              "trtr_auc": {
+                "value": 0.7584738451598219,
+                "ci_low": 0.7291666301409085,
+                "ci_high": 0.7903791392268623,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "tstr_auc": {
+                "value": 0.7103516803293233,
+                "ci_low": 0.6717685532865938,
+                "ci_high": 0.740587325033165,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "ratio": {
+                "value": 0.9365539561613249,
+                "ci_low": 0.9101289049875293,
+                "ci_high": 0.9669287467420596,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "degenerate": false
+            },
+            {
+              "model": "gradient_boosting",
+              "trtr_auc": {
+                "value": 0.7375166882650446,
+                "ci_low": 0.7083623971717403,
+                "ci_high": 0.7697357068363031,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "tstr_auc": {
+                "value": 0.6780250883820306,
+                "ci_low": 0.6440575148534962,
+                "ci_high": 0.7125100021999066,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "ratio": {
+                "value": 0.9193352491820033,
+                "ci_low": 0.8839365225305599,
+                "ci_high": 0.956260652003342,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "degenerate": false
+            }
+          ]
+        },
+        "privacy": {
+          "membership_auc": {
+            "value": 0.5013386666666667,
+            "ci_low": 0.4902194596441143,
+            "ci_high": 0.5130664528399727,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "dcr_share_train": {
+            "value": 0.48633333333333334,
+            "ci_low": 0.476388888888889,
+            "ci_high": 0.495288888888889,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "nndr_synthetic": {
+            "value": 0.9307183337606404,
+            "ci_low": 0.9287496035223486,
+            "ci_high": 0.9327322021054592,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "nndr_holdout": {
+            "value": 0.9242027305695754,
+            "ci_low": 0.9206603458727568,
+            "ci_high": 0.9274426945237555,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "exact_match_rate": {
+            "value": 0.0,
+            "ci_low": 0.0,
+            "ci_high": 0.0,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "exact_match_rate_holdout": {
+            "value": 0.0,
+            "ci_low": 0.0,
+            "ci_high": 0.0,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          }
+        }
+      },
+      "gates": {
+        "membership_auc": {
+          "value": 0.5013386666666667,
+          "op": "<=",
+          "threshold": 0.56,
+          "pass": true
+        },
+        "dcr_share_train": {
+          "value": 0.48633333333333334,
+          "op": "<=",
+          "threshold": 0.56,
+          "pass": true
+        },
+        "exact_match_rate": {
+          "value": 0.0,
+          "op": "<=",
+          "threshold": 0.001,
+          "pass": true
+        },
+        "nndr_synthetic": {
+          "value": 0.9307183337606404,
+          "op": ">=",
+          "threshold": 0.5,
+          "pass": true
+        },
+        "utility_ratio": {
+          "value": 0.927944602671664,
+          "op": ">=",
+          "threshold": 0.5,
+          "pass": true
+        },
+        "epsilon_spent": {
+          "value": 1.999982210784665,
+          "op": "<=",
+          "threshold": 2.0,
+          "pass": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "name": "bayesnet-dp2",
+      "generator": "bayesnet",
+      "family": "dp",
+      "epsilon_target": 2.0,
+      "privacy_report": {
+        "epsilon_target": 2.0,
+        "epsilon_spent": 1.9999606962482246,
+        "delta": 1e-05,
+        "noise_multiplier": 4.328981986384426,
+        "rdp_order": 13.0,
+        "adjacency": "add or remove one record",
+        "queries": [
+          {
+            "mechanism": "pairwise contingency tables",
+            "noise_multiplier": 4.328981986384426,
+            "count": 1
+          },
+          {
+            "mechanism": "conditional count tables",
+            "noise_multiplier": 4.328981986384426,
+            "count": 1
+          },
+          {
+            "mechanism": "within-bin numeric profiles",
+            "noise_multiplier": 4.328981986384426,
+            "count": 1
+          }
+        ],
+        "caveats": [
+          "category domains and numeric bounds are treated as public"
+        ]
+      },
+      "fit_seconds": 0.019,
+      "eval_seconds": 20.38,
+      "training": {},
+      "headline": {
+        "mean_ks": 0.019138888888888903,
+        "mean_tvd": 0.0065555555555555705,
+        "correlation_delta_mean": 0.12365190503352395,
+        "utility_ratio": 0.8771380723515025,
+        "membership_auc": 0.5006897037037037,
+        "dcr_share_train": 0.49333333333333335,
+        "nndr_synthetic": 0.9338775849142001,
+        "exact_match_rate": 0.0
+      },
+      "metrics": {
+        "n_train": 9000,
+        "n_holdout": 3000,
+        "n_synthetic": 9000,
+        "n_boot": 200,
+        "seconds": 20.38,
+        "fidelity": {
+          "per_column": {
+            "age": {
+              "metric": "ks",
+              "value": 0.01244444444444448,
+              "ci_low": 0.005523333333333363,
+              "ci_high": 0.020092777777777824,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "sex": {
+              "metric": "tvd",
+              "value": 0.007888888888888917,
+              "ci_low": 0.0,
+              "ci_high": 0.020734444444444493,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "bmi": {
+              "metric": "ks",
+              "value": 0.007888888888888945,
+              "ci_low": 0.0023927777777778478,
+              "ci_high": 0.016512222222222313,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "smoker": {
+              "metric": "tvd",
+              "value": 0.005444444444444488,
+              "ci_low": 0.0,
+              "ci_high": 0.016658888888888924,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "systolic_bp": {
+              "metric": "ks",
+              "value": 0.013222222222222219,
+              "ci_low": 0.005421111111111144,
+              "ci_high": 0.02377944444444446,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "diastolic_bp": {
+              "metric": "ks",
+              "value": 0.010888888888888837,
+              "ci_low": 0.0045466666666665965,
+              "ci_high": 0.019885555555555462,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "heart_rate": {
+              "metric": "ks",
+              "value": 0.017555555555555546,
+              "ci_low": 0.011591666666666651,
+              "ci_high": 0.024488888888888935,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "glucose": {
+              "metric": "ks",
+              "value": 0.02544444444444449,
+              "ci_low": 0.015758333333333395,
+              "ci_high": 0.037880555555555535,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "cholesterol": {
+              "metric": "ks",
+              "value": 0.010444444444444423,
+              "ci_low": 0.004155555555555544,
+              "ci_high": 0.018611111111111137,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "hypertension": {
+              "metric": "tvd",
+              "value": 0.0023333333333333817,
+              "ci_low": 0.0,
+              "ci_high": 0.011396111111111183,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "diabetes": {
+              "metric": "tvd",
+              "value": 0.009777777777777774,
+              "ci_low": 0.000803888888888879,
+              "ci_high": 0.0179372222222222,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "cad": {
+              "metric": "tvd",
+              "value": 0.0049999999999999975,
+              "ci_low": 0.0001311111111111016,
+              "ci_high": 0.011364444444444448,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "length_of_stay": {
+              "metric": "ks",
+              "value": 0.055222222222222284,
+              "ci_low": 0.04477000000000008,
+              "ci_high": 0.06577833333333344,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "readmitted_30d": {
+              "metric": "tvd",
+              "value": 0.008888888888888863,
+              "ci_low": 0.001333888888888852,
+              "ci_high": 0.016900555555555516,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            }
+          },
+          "mean_ks": {
+            "value": 0.019138888888888903,
+            "ci_low": 0.01607631944444446,
+            "ci_high": 0.02281347222222223,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "mean_tvd": {
+            "value": 0.0065555555555555705,
+            "ci_low": 0.003093333333333328,
+            "ci_high": 0.010783148148148156,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "correlation_delta_mean": {
+            "value": 0.12365190503352395,
+            "ci_low": 0.11731232753150428,
+            "ci_high": 0.12864676189332308,
+            "n_boot": 100,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "correlation_delta_max": {
+            "value": 0.3804015310547174,
+            "ci_low": 0.3461309732639997,
+            "ci_high": 0.41225147969246084,
+            "n_boot": 100,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          }
+        },
+        "utility": {
+          "target": "readmitted_30d",
+          "positive": "yes",
+          "mean_ratio": 0.8771380723515025,
+          "models": [
+            {
+              "model": "logistic_regression",
+              "trtr_auc": {
+                "value": 0.7584738451598219,
+                "ci_low": 0.7291666301409085,
+                "ci_high": 0.7903791392268623,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "tstr_auc": {
+                "value": 0.7088183790570382,
+                "ci_low": 0.6781607627253454,
+                "ci_high": 0.7448476783490056,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "ratio": {
+                "value": 0.9345323949933692,
+                "ci_low": 0.9021129226310642,
+                "ci_high": 0.9631204374930654,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "degenerate": false
+            },
+            {
+              "model": "gradient_boosting",
+              "trtr_auc": {
+                "value": 0.7375166882650446,
+                "ci_low": 0.7083623971717403,
+                "ci_high": 0.7697357068363031,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "tstr_auc": {
+                "value": 0.6045746955118203,
+                "ci_low": 0.5672101109778397,
+                "ci_high": 0.6373006500310644,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "ratio": {
+                "value": 0.8197437497096359,
+                "ci_low": 0.7695381929395322,
+                "ci_high": 0.867162447832909,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "degenerate": false
+            }
+          ]
+        },
+        "privacy": {
+          "membership_auc": {
+            "value": 0.5006897037037037,
+            "ci_low": 0.4904489817570868,
+            "ci_high": 0.5128638312925957,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "dcr_share_train": {
+            "value": 0.49333333333333335,
+            "ci_low": 0.4843288888888889,
+            "ci_high": 0.5044511111111112,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "nndr_synthetic": {
+            "value": 0.9338775849142001,
+            "ci_low": 0.9319141780883943,
+            "ci_high": 0.9359811392321251,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "nndr_holdout": {
+            "value": 0.9242027305695754,
+            "ci_low": 0.9206603458727568,
+            "ci_high": 0.9274426945237555,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "exact_match_rate": {
+            "value": 0.0,
+            "ci_low": 0.0,
+            "ci_high": 0.0,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "exact_match_rate_holdout": {
+            "value": 0.0,
+            "ci_low": 0.0,
+            "ci_high": 0.0,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          }
+        }
+      },
+      "gates": {
+        "membership_auc": {
+          "value": 0.5006897037037037,
+          "op": "<=",
+          "threshold": 0.56,
+          "pass": true
+        },
+        "dcr_share_train": {
+          "value": 0.49333333333333335,
+          "op": "<=",
+          "threshold": 0.56,
+          "pass": true
+        },
+        "exact_match_rate": {
+          "value": 0.0,
+          "op": "<=",
+          "threshold": 0.001,
+          "pass": true
+        },
+        "nndr_synthetic": {
+          "value": 0.9338775849142001,
+          "op": ">=",
+          "threshold": 0.5,
+          "pass": true
+        },
+        "utility_ratio": {
+          "value": 0.8771380723515025,
+          "op": ">=",
+          "threshold": 0.5,
+          "pass": true
+        },
+        "epsilon_spent": {
+          "value": 1.9999606962482246,
+          "op": "<=",
+          "threshold": 2.0,
+          "pass": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "name": "copula-dp4",
+      "generator": "copula",
+      "family": "dp",
+      "epsilon_target": 4.0,
+      "privacy_report": {
+        "epsilon_target": 4.0,
+        "epsilon_spent": 3.999812924169142,
+        "delta": 1e-05,
+        "noise_multiplier": 1.8041482499631791,
+        "rdp_order": 7.2,
+        "adjacency": "add or remove one record",
+        "queries": [
+          {
+            "mechanism": "histograms and count",
+            "noise_multiplier": 7.2165929998527165,
+            "count": 15
+          },
+          {
+            "mechanism": "second moment of clipped normal scores",
+            "noise_multiplier": 1.8041482499631791,
+            "count": 1
+          }
+        ],
+        "caveats": [
+          "category domains and numeric bounds are treated as public"
+        ]
+      },
+      "fit_seconds": 0.012,
+      "eval_seconds": 24.557,
+      "training": {},
+      "headline": {
+        "mean_ks": 0.03727777777777778,
+        "mean_tvd": 0.004111111111111114,
+        "correlation_delta_mean": 0.0678049079024183,
+        "utility_ratio": 0.9462604665631027,
+        "membership_auc": 0.5001517777777778,
+        "dcr_share_train": 0.4862222222222222,
+        "nndr_synthetic": 0.9309887059933744,
+        "exact_match_rate": 0.0
+      },
+      "metrics": {
+        "n_train": 9000,
+        "n_holdout": 3000,
+        "n_synthetic": 9000,
+        "n_boot": 200,
+        "seconds": 24.557,
+        "fidelity": {
+          "per_column": {
+            "age": {
+              "metric": "ks",
+              "value": 0.01244444444444448,
+              "ci_low": 0.00482000000000001,
+              "ci_high": 0.023061666666666706,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "sex": {
+              "metric": "tvd",
+              "value": 0.0024444444444444713,
+              "ci_low": 0.0,
+              "ci_high": 0.013662222222222251,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "bmi": {
+              "metric": "ks",
+              "value": 0.013333333333333308,
+              "ci_low": 0.006665555555555548,
+              "ci_high": 0.021690555555555508,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "smoker": {
+              "metric": "tvd",
+              "value": 0.005222222222222225,
+              "ci_low": 0.0,
+              "ci_high": 0.014615000000000003,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "systolic_bp": {
+              "metric": "ks",
+              "value": 0.01577777777777778,
+              "ci_low": 0.009884999999999998,
+              "ci_high": 0.023682222222222223,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "diastolic_bp": {
+              "metric": "ks",
+              "value": 0.016444444444444484,
+              "ci_low": 0.010235555555555591,
+              "ci_high": 0.025349444444444445,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "heart_rate": {
+              "metric": "ks",
+              "value": 0.02055555555555555,
+              "ci_low": 0.012358333333333348,
+              "ci_high": 0.0328388888888889,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "glucose": {
+              "metric": "ks",
+              "value": 0.08099999999999996,
+              "ci_low": 0.07313833333333325,
+              "ci_high": 0.09204111111111098,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "cholesterol": {
+              "metric": "ks",
+              "value": 0.01,
+              "ci_low": 0.00421888888888889,
+              "ci_high": 0.02046055555555558,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "hypertension": {
+              "metric": "tvd",
+              "value": 0.006444444444444447,
+              "ci_low": 0.0,
+              "ci_high": 0.017803333333333303,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "diabetes": {
+              "metric": "tvd",
+              "value": 0.0021111111111110845,
+              "ci_low": 0.0,
+              "ci_high": 0.009207777777777771,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "cad": {
+              "metric": "tvd",
+              "value": 0.0014444444444444565,
+              "ci_low": 0.0,
+              "ci_high": 0.006744444444444452,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "length_of_stay": {
+              "metric": "ks",
+              "value": 0.12866666666666665,
+              "ci_low": 0.11490166666666671,
+              "ci_high": 0.14182944444444445,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "readmitted_30d": {
+              "metric": "tvd",
+              "value": 0.006999999999999999,
+              "ci_low": 1.777777777781965e-05,
+              "ci_high": 0.015256666666666663,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            }
+          },
+          "mean_ks": {
+            "value": 0.03727777777777778,
+            "ci_low": 0.03416173611111111,
+            "ci_high": 0.040833611111111105,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "mean_tvd": {
+            "value": 0.004111111111111114,
+            "ci_low": 0.0010053703703703709,
+            "ci_high": 0.007728981481481498,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "correlation_delta_mean": {
+            "value": 0.0678049079024183,
+            "ci_low": 0.06111387966778631,
+            "ci_high": 0.0737053988820461,
+            "n_boot": 100,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "correlation_delta_max": {
+            "value": 0.36743392319933504,
+            "ci_low": 0.34119874266102856,
+            "ci_high": 0.3904369056364304,
+            "n_boot": 100,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          }
+        },
+        "utility": {
+          "target": "readmitted_30d",
+          "positive": "yes",
+          "mean_ratio": 0.9462604665631027,
+          "models": [
+            {
+              "model": "logistic_regression",
+              "trtr_auc": {
+                "value": 0.7584738451598219,
+                "ci_low": 0.7291666301409085,
+                "ci_high": 0.7903791392268623,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "tstr_auc": {
+                "value": 0.7256908115728147,
+                "ci_low": 0.6892253673344296,
+                "ci_high": 0.7553085408923246,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "ratio": {
+                "value": 0.9567776347250322,
+                "ci_low": 0.9335713941237335,
+                "ci_high": 0.9810166778532785,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "degenerate": false
+            },
+            {
+              "model": "gradient_boosting",
+              "trtr_auc": {
+                "value": 0.7375166882650446,
+                "ci_low": 0.7083623971717403,
+                "ci_high": 0.7697357068363031,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "tstr_auc": {
+                "value": 0.6901262985030427,
+                "ci_low": 0.6546660864305617,
+                "ci_high": 0.7209046189361408,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "ratio": {
+                "value": 0.9357432984011733,
+                "ci_low": 0.90229017081614,
+                "ci_high": 0.9721545341764486,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "degenerate": false
+            }
+          ]
+        },
+        "privacy": {
+          "membership_auc": {
+            "value": 0.5001517777777778,
+            "ci_low": 0.48942581530911167,
+            "ci_high": 0.511136672222083,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "dcr_share_train": {
+            "value": 0.4862222222222222,
+            "ci_low": 0.4778172222222222,
+            "ci_high": 0.49482833333333337,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "nndr_synthetic": {
+            "value": 0.9309887059933744,
+            "ci_low": 0.9292841797235859,
+            "ci_high": 0.933199936190048,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "nndr_holdout": {
+            "value": 0.9242027305695754,
+            "ci_low": 0.9206603458727568,
+            "ci_high": 0.9274426945237555,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "exact_match_rate": {
+            "value": 0.0,
+            "ci_low": 0.0,
+            "ci_high": 0.0,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "exact_match_rate_holdout": {
+            "value": 0.0,
+            "ci_low": 0.0,
+            "ci_high": 0.0,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          }
+        }
+      },
+      "gates": {
+        "membership_auc": {
+          "value": 0.5001517777777778,
+          "op": "<=",
+          "threshold": 0.56,
+          "pass": true
+        },
+        "dcr_share_train": {
+          "value": 0.4862222222222222,
+          "op": "<=",
+          "threshold": 0.56,
+          "pass": true
+        },
+        "exact_match_rate": {
+          "value": 0.0,
+          "op": "<=",
+          "threshold": 0.001,
+          "pass": true
+        },
+        "nndr_synthetic": {
+          "value": 0.9309887059933744,
+          "op": ">=",
+          "threshold": 0.5,
+          "pass": true
+        },
+        "utility_ratio": {
+          "value": 0.9462604665631027,
+          "op": ">=",
+          "threshold": 0.5,
+          "pass": true
+        },
+        "epsilon_spent": {
+          "value": 3.999812924169142,
+          "op": "<=",
+          "threshold": 4.0,
+          "pass": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "name": "bayesnet-dp4",
+      "generator": "bayesnet",
+      "family": "dp",
+      "epsilon_target": 4.0,
+      "privacy_report": {
+        "epsilon_target": 4.0,
+        "epsilon_spent": 3.999768618456265,
+        "delta": 1e-05,
+        "noise_multiplier": 2.245000710999639,
+        "rdp_order": 7.2,
+        "adjacency": "add or remove one record",
+        "queries": [
+          {
+            "mechanism": "pairwise contingency tables",
+            "noise_multiplier": 2.245000710999639,
+            "count": 1
+          },
+          {
+            "mechanism": "conditional count tables",
+            "noise_multiplier": 2.245000710999639,
+            "count": 1
+          },
+          {
+            "mechanism": "within-bin numeric profiles",
+            "noise_multiplier": 2.245000710999639,
+            "count": 1
+          }
+        ],
+        "caveats": [
+          "category domains and numeric bounds are treated as public"
+        ]
+      },
+      "fit_seconds": 0.019,
+      "eval_seconds": 21.081,
+      "training": {},
+      "headline": {
+        "mean_ks": 0.015777777777777797,
+        "mean_tvd": 0.0029444444444444357,
+        "correlation_delta_mean": 0.10851249616974433,
+        "utility_ratio": 0.8320087257711726,
+        "membership_auc": 0.5009308148148148,
+        "dcr_share_train": 0.5061111111111111,
+        "nndr_synthetic": 0.9312284729062161,
+        "exact_match_rate": 0.0
+      },
+      "metrics": {
+        "n_train": 9000,
+        "n_holdout": 3000,
+        "n_synthetic": 9000,
+        "n_boot": 200,
+        "seconds": 21.081,
+        "fidelity": {
+          "per_column": {
+            "age": {
+              "metric": "ks",
+              "value": 0.015666666666666718,
+              "ci_low": 0.008949444444444482,
+              "ci_high": 0.024638333333333314,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "sex": {
+              "metric": "tvd",
+              "value": 0.001777777777777767,
+              "ci_low": 0.0,
+              "ci_high": 0.011890000000000027,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "bmi": {
+              "metric": "ks",
+              "value": 0.004777777777777881,
+              "ci_low": 0.0,
+              "ci_high": 0.012835555555555697,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "smoker": {
+              "metric": "tvd",
+              "value": 0.0077777777777777585,
+              "ci_low": 5.666666666665323e-05,
+              "ci_high": 0.0192872222222222,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "systolic_bp": {
+              "metric": "ks",
+              "value": 0.014111111111111102,
+              "ci_low": 0.0062000000000000475,
+              "ci_high": 0.02532777777777774,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "diastolic_bp": {
+              "metric": "ks",
+              "value": 0.010444444444444367,
+              "ci_low": 0.004035555555555469,
+              "ci_high": 0.019496666666666513,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "heart_rate": {
+              "metric": "ks",
+              "value": 0.010222222222222244,
+              "ci_low": 0.004187222222222281,
+              "ci_high": 0.018762222222222274,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "glucose": {
+              "metric": "ks",
+              "value": 0.015111111111111186,
+              "ci_low": 0.008015555555555649,
+              "ci_high": 0.0262627777777779,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "cholesterol": {
+              "metric": "ks",
+              "value": 0.009777777777777778,
+              "ci_low": 0.003472222222222217,
+              "ci_high": 0.020069444444444456,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "hypertension": {
+              "metric": "tvd",
+              "value": 0.0040000000000000036,
+              "ci_low": 0.0,
+              "ci_high": 0.013850000000000057,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "diabetes": {
+              "metric": "tvd",
+              "value": 0.0007777777777777731,
+              "ci_low": 0.0,
+              "ci_high": 0.006824999999999989,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "cad": {
+              "metric": "tvd",
+              "value": 0.0021111111111110845,
+              "ci_low": 0.0,
+              "ci_high": 0.008274444444444423,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "length_of_stay": {
+              "metric": "ks",
+              "value": 0.0461111111111111,
+              "ci_low": 0.036926111111111104,
+              "ci_high": 0.05540944444444442,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "readmitted_30d": {
+              "metric": "tvd",
+              "value": 0.0012222222222222287,
+              "ci_low": 0.0,
+              "ci_high": 0.007981666666666724,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            }
+          },
+          "mean_ks": {
+            "value": 0.015777777777777797,
+            "ci_low": 0.012588472222222254,
+            "ci_high": 0.01934090277777778,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "mean_tvd": {
+            "value": 0.0029444444444444357,
+            "ci_low": 0.00017750000000000925,
+            "ci_high": 0.006406666666666673,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "correlation_delta_mean": {
+            "value": 0.10851249616974433,
+            "ci_low": 0.1030418078937621,
+            "ci_high": 0.1139163417922089,
+            "n_boot": 100,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "correlation_delta_max": {
+            "value": 0.3128657773847027,
+            "ci_low": 0.2919591431109689,
+            "ci_high": 0.33632159874508105,
+            "n_boot": 100,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          }
+        },
+        "utility": {
+          "target": "readmitted_30d",
+          "positive": "yes",
+          "mean_ratio": 0.8320087257711726,
+          "models": [
+            {
+              "model": "logistic_regression",
+              "trtr_auc": {
+                "value": 0.7584738451598219,
+                "ci_low": 0.7291666301409085,
+                "ci_high": 0.7903791392268623,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "tstr_auc": {
+                "value": 0.6323417658784788,
+                "ci_low": 0.5977040582803862,
+                "ci_high": 0.6731191403367088,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "ratio": {
+                "value": 0.833702796627397,
+                "ci_low": 0.7885225914547803,
+                "ci_high": 0.8752942792936057,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "degenerate": false
+            },
+            {
+              "model": "gradient_boosting",
+              "trtr_auc": {
+                "value": 0.7375166882650446,
+                "ci_low": 0.7083623971717403,
+                "ci_high": 0.7697357068363031,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "tstr_auc": {
+                "value": 0.6123709145108059,
+                "ci_low": 0.578730362860735,
+                "ci_high": 0.6497371480233474,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "ratio": {
+                "value": 0.8303146549149483,
+                "ci_low": 0.7838693786212194,
+                "ci_high": 0.8741510916352916,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "degenerate": false
+            }
+          ]
+        },
+        "privacy": {
+          "membership_auc": {
+            "value": 0.5009308148148148,
+            "ci_low": 0.4900033564204605,
+            "ci_high": 0.5124506477022024,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "dcr_share_train": {
+            "value": 0.5061111111111111,
+            "ci_low": 0.49491555555555544,
+            "ci_high": 0.5161766666666666,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "nndr_synthetic": {
+            "value": 0.9312284729062161,
+            "ci_low": 0.9294543103272588,
+            "ci_high": 0.9328807306846869,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "nndr_holdout": {
+            "value": 0.9242027305695754,
+            "ci_low": 0.9206603458727568,
+            "ci_high": 0.9274426945237555,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "exact_match_rate": {
+            "value": 0.0,
+            "ci_low": 0.0,
+            "ci_high": 0.0,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "exact_match_rate_holdout": {
+            "value": 0.0,
+            "ci_low": 0.0,
+            "ci_high": 0.0,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          }
+        }
+      },
+      "gates": {
+        "membership_auc": {
+          "value": 0.5009308148148148,
+          "op": "<=",
+          "threshold": 0.56,
+          "pass": true
+        },
+        "dcr_share_train": {
+          "value": 0.5061111111111111,
+          "op": "<=",
+          "threshold": 0.56,
+          "pass": true
+        },
+        "exact_match_rate": {
+          "value": 0.0,
+          "op": "<=",
+          "threshold": 0.001,
+          "pass": true
+        },
+        "nndr_synthetic": {
+          "value": 0.9312284729062161,
+          "op": ">=",
+          "threshold": 0.5,
+          "pass": true
+        },
+        "utility_ratio": {
+          "value": 0.8320087257711726,
+          "op": ">=",
+          "threshold": 0.5,
+          "pass": true
+        },
+        "epsilon_spent": {
+          "value": 3.999768618456265,
+          "op": "<=",
+          "threshold": 4.0,
+          "pass": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "name": "copula-dp8",
+      "generator": "copula",
+      "family": "dp",
+      "epsilon_target": 8.0,
+      "privacy_report": {
+        "epsilon_target": 8.0,
+        "epsilon_spent": 7.999580538947183,
+        "delta": 1e-05,
+        "noise_multiplier": 0.9609760536352997,
+        "rdp_order": 4.3,
+        "adjacency": "add or remove one record",
+        "queries": [
+          {
+            "mechanism": "histograms and count",
+            "noise_multiplier": 3.843904214541199,
+            "count": 15
+          },
+          {
+            "mechanism": "second moment of clipped normal scores",
+            "noise_multiplier": 0.9609760536352997,
+            "count": 1
+          }
+        ],
+        "caveats": [
+          "category domains and numeric bounds are treated as public"
+        ]
+      },
+      "fit_seconds": 0.015,
+      "eval_seconds": 33.925,
+      "training": {},
+      "headline": {
+        "mean_ks": 0.03662500000000001,
+        "mean_tvd": 0.0036666666666666883,
+        "correlation_delta_mean": 0.06697210027390843,
+        "utility_ratio": 0.9518302157333165,
+        "membership_auc": 0.4997964814814815,
+        "dcr_share_train": 0.48833333333333334,
+        "nndr_synthetic": 0.9313926518058535,
+        "exact_match_rate": 0.0
+      },
+      "metrics": {
+        "n_train": 9000,
+        "n_holdout": 3000,
+        "n_synthetic": 9000,
+        "n_boot": 200,
+        "seconds": 33.925,
+        "fidelity": {
+          "per_column": {
+            "age": {
+              "metric": "ks",
+              "value": 0.012555555555555542,
+              "ci_low": 0.005408888888888861,
+              "ci_high": 0.023542222222222166,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "sex": {
+              "metric": "tvd",
+              "value": 0.002111111111111147,
+              "ci_low": 0.0,
+              "ci_high": 0.013172222222222245,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "bmi": {
+              "metric": "ks",
+              "value": 0.01388888888888895,
+              "ci_low": 0.006741666666666722,
+              "ci_high": 0.022644444444444564,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "smoker": {
+              "metric": "tvd",
+              "value": 0.00466666666666668,
+              "ci_low": 0.0,
+              "ci_high": 0.014440555555555559,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "systolic_bp": {
+              "metric": "ks",
+              "value": 0.013666666666666716,
+              "ci_low": 0.0076511111111111745,
+              "ci_high": 0.021765000000000055,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "diastolic_bp": {
+              "metric": "ks",
+              "value": 0.015111111111111075,
+              "ci_low": 0.009220555555555506,
+              "ci_high": 0.023012222222222215,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "heart_rate": {
+              "metric": "ks",
+              "value": 0.0208888888888889,
+              "ci_low": 0.012388888888888915,
+              "ci_high": 0.03328611111111116,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "glucose": {
+              "metric": "ks",
+              "value": 0.07911111111111113,
+              "ci_low": 0.07175944444444442,
+              "ci_high": 0.08955388888888886,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "cholesterol": {
+              "metric": "ks",
+              "value": 0.01,
+              "ci_low": 0.004184444444444428,
+              "ci_high": 0.020115,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "hypertension": {
+              "metric": "tvd",
+              "value": 0.005333333333333384,
+              "ci_low": 0.0,
+              "ci_high": 0.015992777777777856,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "diabetes": {
+              "metric": "tvd",
+              "value": 0.0013333333333333183,
+              "ci_low": 0.0,
+              "ci_high": 0.008122222222222206,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "cad": {
+              "metric": "tvd",
+              "value": 0.001888888888888919,
+              "ci_low": 0.0,
+              "ci_high": 0.007657777777777795,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "length_of_stay": {
+              "metric": "ks",
+              "value": 0.12777777777777777,
+              "ci_low": 0.11366277777777774,
+              "ci_high": 0.14135166666666668,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "readmitted_30d": {
+              "metric": "tvd",
+              "value": 0.006666666666666682,
+              "ci_low": 6.611111111113699e-05,
+              "ci_high": 0.014752222222222274,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            }
+          },
+          "mean_ks": {
+            "value": 0.03662500000000001,
+            "ci_low": 0.03347569444444445,
+            "ci_high": 0.04039305555555555,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "mean_tvd": {
+            "value": 0.0036666666666666883,
+            "ci_low": 0.0005144444444444697,
+            "ci_high": 0.007257037037037055,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "correlation_delta_mean": {
+            "value": 0.06697210027390843,
+            "ci_low": 0.06050932889171515,
+            "ci_high": 0.07282001651229701,
+            "n_boot": 100,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "correlation_delta_max": {
+            "value": 0.36098289491750496,
+            "ci_low": 0.3330424458382133,
+            "ci_high": 0.38508366548183176,
+            "n_boot": 100,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          }
+        },
+        "utility": {
+          "target": "readmitted_30d",
+          "positive": "yes",
+          "mean_ratio": 0.9518302157333165,
+          "models": [
+            {
+              "model": "logistic_regression",
+              "trtr_auc": {
+                "value": 0.7584738451598219,
+                "ci_low": 0.7291666301409085,
+                "ci_high": 0.7903791392268623,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "tstr_auc": {
+                "value": 0.7307092222014193,
+                "ci_low": 0.6939307155117616,
+                "ci_high": 0.7590051055474213,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "ratio": {
+                "value": 0.9633940931047502,
+                "ci_low": 0.9397223764179095,
+                "ci_high": 0.9851361002796027,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "degenerate": false
+            },
+            {
+              "model": "gradient_boosting",
+              "trtr_auc": {
+                "value": 0.7375166882650446,
+                "ci_low": 0.7083623971717403,
+                "ci_high": 0.7697357068363031,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "tstr_auc": {
+                "value": 0.6934621159557557,
+                "ci_low": 0.6610304230135108,
+                "ci_high": 0.7267779389198938,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "ratio": {
+                "value": 0.9402663383618829,
+                "ci_low": 0.909474834070206,
+                "ci_high": 0.9754512387781614,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "degenerate": false
+            }
+          ]
+        },
+        "privacy": {
+          "membership_auc": {
+            "value": 0.4997964814814815,
+            "ci_low": 0.4892443008931833,
+            "ci_high": 0.5111725435334212,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "dcr_share_train": {
+            "value": 0.48833333333333334,
+            "ci_low": 0.47970777777777784,
+            "ci_high": 0.49717166666666673,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "nndr_synthetic": {
+            "value": 0.9313926518058535,
+            "ci_low": 0.9294893596500697,
+            "ci_high": 0.9334533745965445,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "nndr_holdout": {
+            "value": 0.9242027305695754,
+            "ci_low": 0.9206603458727568,
+            "ci_high": 0.9274426945237555,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "exact_match_rate": {
+            "value": 0.0,
+            "ci_low": 0.0,
+            "ci_high": 0.0,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "exact_match_rate_holdout": {
+            "value": 0.0,
+            "ci_low": 0.0,
+            "ci_high": 0.0,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          }
+        }
+      },
+      "gates": {
+        "membership_auc": {
+          "value": 0.4997964814814815,
+          "op": "<=",
+          "threshold": 0.56,
+          "pass": true
+        },
+        "dcr_share_train": {
+          "value": 0.48833333333333334,
+          "op": "<=",
+          "threshold": 0.56,
+          "pass": true
+        },
+        "exact_match_rate": {
+          "value": 0.0,
+          "op": "<=",
+          "threshold": 0.001,
+          "pass": true
+        },
+        "nndr_synthetic": {
+          "value": 0.9313926518058535,
+          "op": ">=",
+          "threshold": 0.5,
+          "pass": true
+        },
+        "utility_ratio": {
+          "value": 0.9518302157333165,
+          "op": ">=",
+          "threshold": 0.5,
+          "pass": true
+        },
+        "epsilon_spent": {
+          "value": 7.999580538947183,
+          "op": "<=",
+          "threshold": 8.0,
+          "pass": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "name": "bayesnet-dp8",
+      "generator": "bayesnet",
+      "family": "dp",
+      "epsilon_target": 8.0,
+      "privacy_report": {
+        "epsilon_target": 8.0,
+        "epsilon_spent": 7.999986604449845,
+        "delta": 1e-05,
+        "noise_multiplier": 1.1957290780866376,
+        "rdp_order": 4.3,
+        "adjacency": "add or remove one record",
+        "queries": [
+          {
+            "mechanism": "pairwise contingency tables",
+            "noise_multiplier": 1.1957290780866376,
+            "count": 1
+          },
+          {
+            "mechanism": "conditional count tables",
+            "noise_multiplier": 1.1957290780866376,
+            "count": 1
+          },
+          {
+            "mechanism": "within-bin numeric profiles",
+            "noise_multiplier": 1.1957290780866376,
+            "count": 1
+          }
+        ],
+        "caveats": [
+          "category domains and numeric bounds are treated as public"
+        ]
+      },
+      "fit_seconds": 0.018,
+      "eval_seconds": 19.688,
+      "training": {},
+      "headline": {
+        "mean_ks": 0.016430555555555566,
+        "mean_tvd": 0.00322222222222222,
+        "correlation_delta_mean": 0.10152018525803687,
+        "utility_ratio": 0.7681803181823234,
+        "membership_auc": 0.5007558888888889,
+        "dcr_share_train": 0.5023333333333333,
+        "nndr_synthetic": 0.933502333501758,
+        "exact_match_rate": 0.0
+      },
+      "metrics": {
+        "n_train": 9000,
+        "n_holdout": 3000,
+        "n_synthetic": 9000,
+        "n_boot": 200,
+        "seconds": 19.688,
+        "fidelity": {
+          "per_column": {
+            "age": {
+              "metric": "ks",
+              "value": 0.016000000000000014,
+              "ci_low": 0.009355555555555525,
+              "ci_high": 0.02547777777777782,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "sex": {
+              "metric": "tvd",
+              "value": 0.0012222222222222356,
+              "ci_low": 0.0,
+              "ci_high": 0.01179055555555561,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "bmi": {
+              "metric": "ks",
+              "value": 0.0040000000000000036,
+              "ci_low": 0.0,
+              "ci_high": 0.010702222222222176,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "smoker": {
+              "metric": "tvd",
+              "value": 0.0037777777777777827,
+              "ci_low": 0.0,
+              "ci_high": 0.015381666666666703,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "systolic_bp": {
+              "metric": "ks",
+              "value": 0.014888888888888896,
+              "ci_low": 0.00626555555555554,
+              "ci_high": 0.02597111111111113,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "diastolic_bp": {
+              "metric": "ks",
+              "value": 0.010000000000000009,
+              "ci_low": 0.004102777777777773,
+              "ci_high": 0.01945833333333331,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "heart_rate": {
+              "metric": "ks",
+              "value": 0.012333333333333307,
+              "ci_low": 0.004852777777777782,
+              "ci_high": 0.023858333333333325,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "glucose": {
+              "metric": "ks",
+              "value": 0.020888888888888957,
+              "ci_low": 0.012494444444444554,
+              "ci_high": 0.032419444444444515,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "cholesterol": {
+              "metric": "ks",
+              "value": 0.015555555555555545,
+              "ci_low": 0.00708444444444443,
+              "ci_high": 0.02643999999999997,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "hypertension": {
+              "metric": "tvd",
+              "value": 0.006444444444444447,
+              "ci_low": 0.0,
+              "ci_high": 0.016912222222222266,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "diabetes": {
+              "metric": "tvd",
+              "value": 0.004111111111111086,
+              "ci_low": 0.0,
+              "ci_high": 0.0117683333333333,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "cad": {
+              "metric": "tvd",
+              "value": 0.003333333333333313,
+              "ci_low": 0.0,
+              "ci_high": 0.010051666666666648,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "length_of_stay": {
+              "metric": "ks",
+              "value": 0.0377777777777778,
+              "ci_low": 0.02941611111111113,
+              "ci_high": 0.04954111111111115,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "readmitted_30d": {
+              "metric": "tvd",
+              "value": 0.00044444444444445563,
+              "ci_low": 0.0,
+              "ci_high": 0.006521666666666705,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            }
+          },
+          "mean_ks": {
+            "value": 0.016430555555555566,
+            "ci_low": 0.01312055555555559,
+            "ci_high": 0.01990875000000001,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "mean_tvd": {
+            "value": 0.00322222222222222,
+            "ci_low": 0.00014018518518517983,
+            "ci_high": 0.006736944444444439,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "correlation_delta_mean": {
+            "value": 0.10152018525803687,
+            "ci_low": 0.09674880414238776,
+            "ci_high": 0.10759058089732344,
+            "n_boot": 100,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "correlation_delta_max": {
+            "value": 0.3114436557606699,
+            "ci_low": 0.2939809290775015,
+            "ci_high": 0.33952990332991223,
+            "n_boot": 100,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          }
+        },
+        "utility": {
+          "target": "readmitted_30d",
+          "positive": "yes",
+          "mean_ratio": 0.7681803181823234,
+          "models": [
+            {
+              "model": "logistic_regression",
+              "trtr_auc": {
+                "value": 0.7584738451598219,
+                "ci_low": 0.7291666301409085,
+                "ci_high": 0.7903791392268623,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "tstr_auc": {
+                "value": 0.5573066761626106,
+                "ci_low": 0.5202170438272264,
+                "ci_high": 0.5916856209872824,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "ratio": {
+                "value": 0.7347737561671329,
+                "ci_low": 0.6872132962411033,
+                "ci_high": 0.7896596105880969,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "degenerate": false
+            },
+            {
+              "model": "gradient_boosting",
+              "trtr_auc": {
+                "value": 0.7375166882650446,
+                "ci_low": 0.7083623971717403,
+                "ci_high": 0.7697357068363031,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "tstr_auc": {
+                "value": 0.5911837012399794,
+                "ci_low": 0.5525979268147343,
+                "ci_high": 0.6271789731099553,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "ratio": {
+                "value": 0.8015868801975138,
+                "ci_low": 0.7507680606144049,
+                "ci_high": 0.8537887557405328,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "degenerate": false
+            }
+          ]
+        },
+        "privacy": {
+          "membership_auc": {
+            "value": 0.5007558888888889,
+            "ci_low": 0.49062570620112733,
+            "ci_high": 0.5117303003780193,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "dcr_share_train": {
+            "value": 0.5023333333333333,
+            "ci_low": 0.49174444444444443,
+            "ci_high": 0.5104166666666666,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "nndr_synthetic": {
+            "value": 0.933502333501758,
+            "ci_low": 0.9312329462241371,
+            "ci_high": 0.9352706431327367,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "nndr_holdout": {
+            "value": 0.9242027305695754,
+            "ci_low": 0.9206603458727568,
+            "ci_high": 0.9274426945237555,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "exact_match_rate": {
+            "value": 0.0,
+            "ci_low": 0.0,
+            "ci_high": 0.0,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "exact_match_rate_holdout": {
+            "value": 0.0,
+            "ci_low": 0.0,
+            "ci_high": 0.0,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          }
+        }
+      },
+      "gates": {
+        "membership_auc": {
+          "value": 0.5007558888888889,
+          "op": "<=",
+          "threshold": 0.56,
+          "pass": true
+        },
+        "dcr_share_train": {
+          "value": 0.5023333333333333,
+          "op": "<=",
+          "threshold": 0.56,
+          "pass": true
+        },
+        "exact_match_rate": {
+          "value": 0.0,
+          "op": "<=",
+          "threshold": 0.001,
+          "pass": true
+        },
+        "nndr_synthetic": {
+          "value": 0.933502333501758,
+          "op": ">=",
+          "threshold": 0.5,
+          "pass": true
+        },
+        "utility_ratio": {
+          "value": 0.7681803181823234,
+          "op": ">=",
+          "threshold": 0.5,
+          "pass": true
+        },
+        "epsilon_spent": {
+          "value": 7.999986604449845,
+          "op": "<=",
+          "threshold": 8.0,
+          "pass": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "name": "ctgan-dp1",
+      "generator": "ctgan",
+      "family": "dp",
+      "epsilon_target": 1.0,
+      "privacy_report": {
+        "epsilon_target": 1.0,
+        "epsilon_spent": 0.9999544095159036,
+        "delta": 1e-05,
+        "noise_multiplier": 12.776030143046546,
+        "rdp_order": 24.0,
+        "adjacency": "add or remove one record",
+        "queries": [
+          {
+            "mechanism": "condition frequencies",
+            "noise_multiplier": 255.52060286093092,
+            "count": 6
+          },
+          {
+            "mechanism": "dp-sgd discriminator",
+            "noise_multiplier": 12.776030143046546,
+            "sampling_rate": 0.1111111111111111,
+            "steps": 540
+          }
+        ],
+        "caveats": [
+          "category domains and numeric bounds are treated as public",
+          "per-record gradients clipped to L2 norm 1.0"
+        ]
+      },
+      "fit_seconds": 49.948,
+      "eval_seconds": 27.236,
+      "training": {
+        "epochs_completed": 60,
+        "steps_completed": 540,
+        "train_seconds": 49.934,
+        "pac": 1,
+        "batch_size": 1000
+      },
+      "headline": {
+        "mean_ks": 0.19969444444444445,
+        "mean_tvd": 0.044888888888888874,
+        "correlation_delta_mean": 0.19696120392914349,
+        "utility_ratio": 0.7888570985382215,
+        "membership_auc": 0.49765588888888884,
+        "dcr_share_train": 0.5203333333333333,
+        "nndr_synthetic": 0.9513243400012639,
+        "exact_match_rate": 0.0
+      },
+      "metrics": {
+        "n_train": 9000,
+        "n_holdout": 3000,
+        "n_synthetic": 9000,
+        "n_boot": 200,
+        "seconds": 27.236,
+        "fidelity": {
+          "per_column": {
+            "age": {
+              "metric": "ks",
+              "value": 0.07044444444444442,
+              "ci_low": 0.060024444444444484,
+              "ci_high": 0.07915777777777779,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "sex": {
+              "metric": "tvd",
+              "value": 0.024888888888888877,
+              "ci_low": 0.011645555555555534,
+              "ci_high": 0.039231666666666665,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "bmi": {
+              "metric": "ks",
+              "value": 0.2198888888888889,
+              "ci_low": 0.20766111111111113,
+              "ci_high": 0.22949722222222227,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "smoker": {
+              "metric": "tvd",
+              "value": 0.0054444444444444046,
+              "ci_low": 0.0,
+              "ci_high": 0.014370555555555534,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "systolic_bp": {
+              "metric": "ks",
+              "value": 0.22566666666666668,
+              "ci_low": 0.21464444444444447,
+              "ci_high": 0.2401138888888889,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "diastolic_bp": {
+              "metric": "ks",
+              "value": 0.2802222222222222,
+              "ci_low": 0.2672083333333333,
+              "ci_high": 0.2922388888888889,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "heart_rate": {
+              "metric": "ks",
+              "value": 0.193,
+              "ci_low": 0.18062055555555556,
+              "ci_high": 0.2040927777777778,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "glucose": {
+              "metric": "ks",
+              "value": 0.2966666666666667,
+              "ci_low": 0.28719444444444453,
+              "ci_high": 0.3062333333333334,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "cholesterol": {
+              "metric": "ks",
+              "value": 0.1867777777777778,
+              "ci_low": 0.1755877777777778,
+              "ci_high": 0.19937111111111114,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "hypertension": {
+              "metric": "tvd",
+              "value": 0.05933333333333328,
+              "ci_low": 0.04788055555555548,
+              "ci_high": 0.0714527777777777,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "diabetes": {
+              "metric": "tvd",
+              "value": 0.0828888888888889,
+              "ci_low": 0.07585777777777779,
+              "ci_high": 0.09020222222222227,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "cad": {
+              "metric": "tvd",
+              "value": 0.04800000000000002,
+              "ci_low": 0.04243055555555558,
+              "ci_high": 0.05431944444444445,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "length_of_stay": {
+              "metric": "ks",
+              "value": 0.12488888888888888,
+              "ci_low": 0.11224222222222227,
+              "ci_high": 0.13853666666666664,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "readmitted_30d": {
+              "metric": "tvd",
+              "value": 0.048777777777777795,
+              "ci_low": 0.04083555555555559,
+              "ci_high": 0.05530777777777784,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            }
+          },
+          "mean_ks": {
+            "value": 0.19969444444444445,
+            "ci_low": 0.1949816666666667,
+            "ci_high": 0.20478791666666668,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "mean_tvd": {
+            "value": 0.044888888888888874,
+            "ci_low": 0.039738796296296286,
+            "ci_high": 0.04943046296296297,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "correlation_delta_mean": {
+            "value": 0.19696120392914349,
+            "ci_low": 0.19258920849321937,
+            "ci_high": 0.20122449919255436,
+            "n_boot": 100,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "correlation_delta_max": {
+            "value": 0.7964887337295409,
+            "ci_low": 0.7764954702146063,
+            "ci_high": 0.8145991768913009,
+            "n_boot": 100,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          }
+        },
+        "utility": {
+          "target": "readmitted_30d",
+          "positive": "yes",
+          "mean_ratio": 0.7888570985382215,
+          "models": [
+            {
+              "model": "logistic_regression",
+              "trtr_auc": {
+                "value": 0.7584738451598219,
+                "ci_low": 0.7291666301409085,
+                "ci_high": 0.7903791392268623,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "tstr_auc": {
+                "value": 0.600422667405784,
+                "ci_low": 0.5646678277100311,
+                "ci_high": 0.6373382783763086,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "ratio": {
+                "value": 0.79161947539439,
+                "ci_low": 0.746993208103795,
+                "ci_high": 0.848927115749956,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "degenerate": false
+            },
+            {
+              "model": "gradient_boosting",
+              "trtr_auc": {
+                "value": 0.7375166882650446,
+                "ci_low": 0.7083623971717403,
+                "ci_high": 0.7697357068363031,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "tstr_auc": {
+                "value": 0.5797579757975797,
+                "ci_low": 0.5448558077291104,
+                "ci_high": 0.6156778619458839,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "ratio": {
+                "value": 0.7860947216820531,
+                "ci_low": 0.7371462335403081,
+                "ci_high": 0.8374804263355039,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "degenerate": false
+            }
+          ]
+        },
+        "privacy": {
+          "membership_auc": {
+            "value": 0.49765588888888884,
+            "ci_low": 0.4874611784254465,
+            "ci_high": 0.5113056038004666,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "dcr_share_train": {
+            "value": 0.5203333333333333,
+            "ci_low": 0.5110644444444444,
+            "ci_high": 0.5298616666666667,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "nndr_synthetic": {
+            "value": 0.9513243400012639,
+            "ci_low": 0.9497507954134699,
+            "ci_high": 0.9528863750598968,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "nndr_holdout": {
+            "value": 0.9242027305695754,
+            "ci_low": 0.9206603458727568,
+            "ci_high": 0.9274426945237555,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "exact_match_rate": {
+            "value": 0.0,
+            "ci_low": 0.0,
+            "ci_high": 0.0,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "exact_match_rate_holdout": {
+            "value": 0.0,
+            "ci_low": 0.0,
+            "ci_high": 0.0,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          }
+        }
+      },
+      "gates": {
+        "membership_auc": {
+          "value": 0.49765588888888884,
+          "op": "<=",
+          "threshold": 0.56,
+          "pass": true
+        },
+        "dcr_share_train": {
+          "value": 0.5203333333333333,
+          "op": "<=",
+          "threshold": 0.56,
+          "pass": true
+        },
+        "exact_match_rate": {
+          "value": 0.0,
+          "op": "<=",
+          "threshold": 0.001,
+          "pass": true
+        },
+        "nndr_synthetic": {
+          "value": 0.9513243400012639,
+          "op": ">=",
+          "threshold": 0.5,
+          "pass": true
+        },
+        "utility_ratio": {
+          "value": 0.7888570985382215,
+          "op": ">=",
+          "threshold": 0.5,
+          "pass": true
+        },
+        "epsilon_spent": {
+          "value": 0.9999544095159036,
+          "op": "<=",
+          "threshold": 1.0,
+          "pass": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "name": "ctgan-dp4",
+      "generator": "ctgan",
+      "family": "dp",
+      "epsilon_target": 4.0,
+      "privacy_report": {
+        "epsilon_target": 4.0,
+        "epsilon_spent": 3.9999056014817587,
+        "delta": 1e-05,
+        "noise_multiplier": 3.497429937853596,
+        "rdp_order": 7.0,
+        "adjacency": "add or remove one record",
+        "queries": [
+          {
+            "mechanism": "condition frequencies",
+            "noise_multiplier": 69.94859875707192,
+            "count": 6
+          },
+          {
+            "mechanism": "dp-sgd discriminator",
+            "noise_multiplier": 3.497429937853596,
+            "sampling_rate": 0.1111111111111111,
+            "steps": 540
+          }
+        ],
+        "caveats": [
+          "category domains and numeric bounds are treated as public",
+          "per-record gradients clipped to L2 norm 1.0"
+        ]
+      },
+      "fit_seconds": 48.802,
+      "eval_seconds": 19.464,
+      "training": {
+        "epochs_completed": 60,
+        "steps_completed": 540,
+        "train_seconds": 48.793,
+        "pac": 1,
+        "batch_size": 1000
+      },
+      "headline": {
+        "mean_ks": 0.23483333333333337,
+        "mean_tvd": 0.03161111111111111,
+        "correlation_delta_mean": 0.15656779215383893,
+        "utility_ratio": 0.92770178930349,
+        "membership_auc": 0.49818118518518517,
+        "dcr_share_train": 0.5103333333333333,
+        "nndr_synthetic": 0.9443685119676472,
+        "exact_match_rate": 0.0
+      },
+      "metrics": {
+        "n_train": 9000,
+        "n_holdout": 3000,
+        "n_synthetic": 9000,
+        "n_boot": 200,
+        "seconds": 19.464,
+        "fidelity": {
+          "per_column": {
+            "age": {
+              "metric": "ks",
+              "value": 0.189,
+              "ci_low": 0.17478333333333332,
+              "ci_high": 0.200675,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "sex": {
+              "metric": "tvd",
+              "value": 0.026999999999999996,
+              "ci_low": 0.01182111111111111,
+              "ci_high": 0.040404444444444444,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "bmi": {
+              "metric": "ks",
+              "value": 0.2487777777777778,
+              "ci_low": 0.23555722222222225,
+              "ci_high": 0.26056833333333335,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "smoker": {
+              "metric": "tvd",
+              "value": 0.004444444444444459,
+              "ci_low": 0.0,
+              "ci_high": 0.012952222222222276,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "systolic_bp": {
+              "metric": "ks",
+              "value": 0.268,
+              "ci_low": 0.25505333333333335,
+              "ci_high": 0.2824144444444445,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "diastolic_bp": {
+              "metric": "ks",
+              "value": 0.22255555555555556,
+              "ci_low": 0.21077388888888893,
+              "ci_high": 0.23456833333333338,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "heart_rate": {
+              "metric": "ks",
+              "value": 0.23066666666666666,
+              "ci_low": 0.21901555555555552,
+              "ci_high": 0.24171555555555557,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "glucose": {
+              "metric": "ks",
+              "value": 0.3642222222222222,
+              "ci_low": 0.3542927777777777,
+              "ci_high": 0.3749844444444444,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "cholesterol": {
+              "metric": "ks",
+              "value": 0.2247777777777778,
+              "ci_low": 0.21342944444444448,
+              "ci_high": 0.2374377777777778,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "hypertension": {
+              "metric": "tvd",
+              "value": 0.03388888888888887,
+              "ci_low": 0.022634444444444436,
+              "ci_high": 0.046134444444444436,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "diabetes": {
+              "metric": "tvd",
+              "value": 0.04277777777777779,
+              "ci_low": 0.031142777777777762,
+              "ci_high": 0.051848333333333343,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "cad": {
+              "metric": "tvd",
+              "value": 0.044555555555555564,
+              "ci_low": 0.03592055555555558,
+              "ci_high": 0.053809444444444444,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "length_of_stay": {
+              "metric": "ks",
+              "value": 0.1306666666666667,
+              "ci_low": 0.11919722222222232,
+              "ci_high": 0.14187222222222226,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            },
+            "readmitted_30d": {
+              "metric": "tvd",
+              "value": 0.03700000000000001,
+              "ci_low": 0.028564444444444483,
+              "ci_high": 0.044120000000000034,
+              "n_boot": 200,
+              "level": 0.95,
+              "method": "bias-corrected percentile bootstrap"
+            }
+          },
+          "mean_ks": {
+            "value": 0.23483333333333337,
+            "ci_low": 0.22833076388888895,
+            "ci_high": 0.24112486111111117,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "mean_tvd": {
+            "value": 0.03161111111111111,
+            "ci_low": 0.02742518518518516,
+            "ci_high": 0.03481546296296296,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "correlation_delta_mean": {
+            "value": 0.15656779215383893,
+            "ci_low": 0.15304367166565205,
+            "ci_high": 0.16031406265707543,
+            "n_boot": 100,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "correlation_delta_max": {
+            "value": 0.6478595117526611,
+            "ci_low": 0.6253666904709473,
+            "ci_high": 0.675305230923501,
+            "n_boot": 100,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          }
+        },
+        "utility": {
+          "target": "readmitted_30d",
+          "positive": "yes",
+          "mean_ratio": 0.92770178930349,
+          "models": [
+            {
+              "model": "logistic_regression",
+              "trtr_auc": {
+                "value": 0.7584738451598219,
+                "ci_low": 0.7291666301409085,
+                "ci_high": 0.7903791392268623,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "tstr_auc": {
+                "value": 0.720612439441942,
+                "ci_low": 0.6827992123407665,
+                "ci_high": 0.7536004842769283,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "ratio": {
+                "value": 0.9500821208806457,
+                "ci_low": 0.9209523485111573,
+                "ci_high": 0.9779384038091868,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "degenerate": false
+            },
+            {
+              "model": "gradient_boosting",
+              "trtr_auc": {
+                "value": 0.7375166882650446,
+                "ci_low": 0.7083623971717403,
+                "ci_high": 0.7697357068363031,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "tstr_auc": {
+                "value": 0.6676896833176087,
+                "ci_low": 0.6372975239152444,
+                "ci_high": 0.6994335529648504,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "ratio": {
+                "value": 0.9053214577263344,
+                "ci_low": 0.8631664690443946,
+                "ci_high": 0.9445132388581681,
+                "n_boot": 200,
+                "level": 0.95,
+                "method": "bias-corrected percentile bootstrap"
+              },
+              "degenerate": false
+            }
+          ]
+        },
+        "privacy": {
+          "membership_auc": {
+            "value": 0.49818118518518517,
+            "ci_low": 0.48781363095651975,
+            "ci_high": 0.5096951836602832,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "dcr_share_train": {
+            "value": 0.5103333333333333,
+            "ci_low": 0.4995561111111111,
+            "ci_high": 0.5211283333333333,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "nndr_synthetic": {
+            "value": 0.9443685119676472,
+            "ci_low": 0.9426490927705471,
+            "ci_high": 0.9460492951193327,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "nndr_holdout": {
+            "value": 0.9242027305695754,
+            "ci_low": 0.9206603458727568,
+            "ci_high": 0.9274426945237555,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "exact_match_rate": {
+            "value": 0.0,
+            "ci_low": 0.0,
+            "ci_high": 0.0,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          },
+          "exact_match_rate_holdout": {
+            "value": 0.0,
+            "ci_low": 0.0,
+            "ci_high": 0.0,
+            "n_boot": 200,
+            "level": 0.95,
+            "method": "bias-corrected percentile bootstrap"
+          }
+        }
+      },
+      "gates": {
+        "membership_auc": {
+          "value": 0.49818118518518517,
+          "op": "<=",
+          "threshold": 0.56,
+          "pass": true
+        },
+        "dcr_share_train": {
+          "value": 0.5103333333333333,
+          "op": "<=",
+          "threshold": 0.56,
+          "pass": true
+        },
+        "exact_match_rate": {
+          "value": 0.0,
+          "op": "<=",
+          "threshold": 0.001,
+          "pass": true
+        },
+        "nndr_synthetic": {
+          "value": 0.9443685119676472,
+          "op": ">=",
+          "threshold": 0.5,
+          "pass": true
+        },
+        "utility_ratio": {
+          "value": 0.92770178930349,
+          "op": ">=",
+          "threshold": 0.5,
+          "pass": true
+        },
+        "epsilon_spent": {
+          "value": 3.9999056014817587,
+          "op": "<=",
+          "threshold": 4.0,
+          "pass": true
+        }
+      },
+      "passed": true
+    }
+  ],
+  "determinism": {
+    "copula": true,
+    "bayesnet": true
+  },
+  "gate_passed": true
+}
