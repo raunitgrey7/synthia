@@ -164,7 +164,7 @@ Determinism check inside the final run (same seed, refit and resample twice): {'
 
 * The DP-SGD GAN is not useful at this cohort size: 540 critic steps at sampling rate 0.11 need sigma 12.8 for epsilon 1 and 3.5 for epsilon 4, and mean KS stays above 0.2. The copula and the network are the practical DP generators here; the GAN rows are kept for honesty.
 * The DP network's utility ratio is non-monotone in epsilon (0.828, 0.822, 0.877, 0.832, 0.768 for epsilon 0.5, 1, 2, 4, 8). Each cell is a single seed and the readmission target sits several hops from its predictors in a tree, so which noisy edge wins matters more than the noise on the tables. A multi-seed sweep would characterise this but was out of the time budget.
-* The non-DP GAN is capped at 300 epochs (58 s of training in the final run); it reaches mean KS 0.089 and utility 0.934, clearly behind the copula and network. More epochs would help but the charter caps training at a few minutes.
+* The non-DP GAN is capped at 300 epochs (58 s of training in the final run); it reaches mean KS 0.089 and utility 0.934, clearly behind the copula and network. More epochs would help, but every training run here is capped at a few minutes.
 * GAN numbers reproduced exactly between the two full runs on this machine with the same thread count; across machines the floating point reduction order can differ, so the GAN rows should be expected to move within their intervals elsewhere.
 * Confidence intervals cover row sampling only, not seed-to-seed variation of the generators.
 * The copula's single correlation matrix smooths higher-order effects (for example the diabetes-dependent variance of glucose); the network with two parents captures some of these, as its higher utility ratio shows.

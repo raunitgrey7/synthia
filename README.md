@@ -1,5 +1,8 @@
 # Synthia: privacy-preserving synthetic tabular data
 
+[![ci](https://github.com/raunitgrey7/synthia/actions/workflows/ci.yml/badge.svg)](https://github.com/raunitgrey7/synthia/actions/workflows/ci.yml)
+[![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 Synthia fits a generator to a patient table, samples new rows that keep the marginals and the dependencies of the
 original, and measures what came out: fidelity against the real data, utility for a downstream model, and how
 much the synthetic rows leak about the people in the training set. Three generators share one interface, a

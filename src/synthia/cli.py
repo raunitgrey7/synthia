@@ -178,7 +178,7 @@ def build_parser() -> argparse.ArgumentParser:
     p.set_defaults(func=cmd_bench)
 
     p = sub.add_parser("serve", help="run the HTTP API")
-    p.add_argument("--host", default="0.0.0.0")
+    p.add_argument("--host", default="127.0.0.1")
     p.add_argument("--port", type=int, default=8000)
     p.set_defaults(func=cmd_serve)
     return parser

@@ -25,7 +25,7 @@ report:
 	$(UV) run $(PKG) report --out reports/patients_copula.html
 
 serve:
-	$(UV) run uvicorn $(PKG).api.app:app --host 0.0.0.0 --port 8000
+	$(UV) run uvicorn $(PKG).api.app:app --host 127.0.0.1 --port 8000
 
 docker:
 	docker build -t synthia:latest .
