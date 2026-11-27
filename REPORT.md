@@ -171,4 +171,4 @@ Determinism check inside the final run (same seed, refit and resample twice): {'
 * Fitted models live in memory in the API; there is no persistence. Rows with missing values are dropped at import; free text is not handled.
 * The reference cohort is synthetic by construction, so the benchmark measures how well a generator reproduces a known graph, not clinical realism. Any CSV can be substituted with `--csv`, in which case numeric bounds are inferred and the DP report flags that they are not covered by the epsilon.
 * The Docker image is 1.74 GB because of the torch wheel; a copula-only image would be far smaller but was not built.
-* The HTML report was validated structurally (well-formed, self-contained, 18 inline SVGs) and by reading the generated SVG coordinates, not by viewing it in a browser, which this build was not allowed to use.
+* The HTML report was validated structurally (well-formed, self-contained, 18 inline SVGs) by reading the generated SVG coordinates, and by rendering a copula report in headless Chrome with no console errors.
